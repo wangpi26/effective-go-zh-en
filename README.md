@@ -1,10 +1,10 @@
 `《Effective Go》` 作为 `GO` 语言的入门必读教程，值得每位初学者好好阅读一遍，编辑成书，方便阅读交流。
 
-*参考官方版[Effective Go](https://golang.org/doc/effective_go.html)*
+*参考官方版：[Effective Go](https://golang.org/doc/effective_go.html)*
 
-*参考翻译版[Effective Go](http://www.hellogcc.org/effective_go.html)*
+*参考翻译版：[Effective Go](http://www.hellogcc.org/effective_go.html)*
 
-**Fork me on [GitHub](https://github.com/bingoHuang/effective-go-cn-gitbook)**
+**[Fork me on GitHub](https://github.com/bingoHuang/effective-go-cn-gitbook)**
 
 ## 当前完成章节（持续更新）：
 

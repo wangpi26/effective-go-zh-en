@@ -14,13 +14,13 @@ As an example, there's no need to spend time lining up the comments on the field
 
 举例来说，你无需花时间将结构体中的字段注释对齐，gofmt 将为你代劳。 假如有以下声明：
 
-```
+```go
 type T struct {
 	name string // name of the object
 	value int // its value
 }
 ```
-```
+```go
 type T struct {
 	name string // 对象名
 	value int // 对象值
@@ -31,13 +31,13 @@ gofmt will line up the columns:
 
 gofmt 会将它按列对齐为：
 
-```
+```go
 type T struct {
 	name    string // name of the object
 	value   int    // its value
 }
 ```
-```
+```go
 type T struct {
 	name    string // 对象名
 	value   int    // 对象值
@@ -71,4 +71,4 @@ Parentheses
   比起C和Java，Go所需的括号更少：控制结构（if、for 和 switch）在语法上并不需要圆括号。此外，操作符优先级处理变得更加简洁，因此
     x<<8 + y<<16
   正表述了空格符所传达的含义。
-```  
+```

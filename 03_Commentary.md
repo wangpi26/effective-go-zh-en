@@ -14,7 +14,7 @@ Every package should have a package comment, a block comment preceding the packa
 
 每个包都应包含一段包注释，即放置在包子句前的一个**块注释**。对于包含多个文件的包， 包注释只需出现在其中的任一文件中即可。包注释应在整体上对该包进行介绍，并提供包的相关信息。 它将出现在 godoc 页面中的最上面，并为紧随其后的内容建立详细的文档。
 
-```
+```go
 /*
 Package regexp implements a simple library for regular expressions.
 
@@ -36,7 +36,7 @@ The syntax of the regular expressions accepted is:
 */
 package regexp
 ```
-```
+```go
 /*
 	regexp 包为正则表达式实现了一个简单的库。
 
@@ -62,11 +62,11 @@ If the package is simple, the package comment can be brief.
 
 若某个包比较简单，包注释同样可以简洁些。
 
-```
+```go
 // Package path implements utility routines for
 // manipulating slash-separated filename paths.
 ```
-```
+```go
 // path 包实现了一些常用的工具，以便于操作用反斜杠分隔的路径.
 ```
 Comments do not need extra formatting such as banners of stars. The generated output may not even be presented in a fixed-width font, so don't depend on spacing for alignment—godoc, like gofmt, takes care of that. The comments are uninterpreted plain text, so HTML and other annotations such as `_this_` will reproduce _verbatim_ and should not be used. One adjustment godoc does do is to display indented text in a fixed-width font, suitable for program snippets. The package comment for the [fmt package](https://go-zh.org/pkg/fmt/) uses this to good effect.
@@ -85,12 +85,12 @@ Doc comments work best as complete sentences, which allow a wide variety of auto
 
 文档注释最好是完整的句子，这样它才能适应各种自动化的展示。 第一句应当以被声明的东西开头，并且是单句的摘要。
 
-```
+```go
 // Compile parses a regular expression and returns, if successful, a Regexp
 // object that can be used to match against text.
 func Compile(str string) (regexp *Regexp, err error) {
 ```
-```
+```go
 // Compile 用于解析正则表达式并返回，如果成功，则 Regexp 对象就可用于匹配所针对的文本。
 func Compile(str string) (regexp *Regexp, err error) {
 ```
@@ -98,14 +98,14 @@ If the name always begins the comment, the output of godoc can usefully be run t
 
 若注释总是以名称开头，godoc 的输出就能通过 grep 变得更加有用。假如你记不住“Compile”这个名称，而又在找正则表达式的解析函数， 那就可以运行
 
-```
+```go
 $ godoc regexp | grep parse
 ```
 If all the doc comments in the package began, "This function...", grep wouldn't help you remember the name. But because the package starts each doc comment with the name, you'd see something like this, which recalls the word you're looking for.
 
 若包中的所有文档注释都以“此函数…”开头，grep 就无法帮你记住此名称。 但由于每个包的文档注释都以其名称开头，你就能看到这样的内容，它能显示你正在寻找的词语。
 
-```
+```go
 $ godoc regexp | grep parse
 	Compile parses a regular expression and returns, if successful, a Regexp
 	parsed. It simplifies safe initialization of global variables holding
@@ -117,7 +117,7 @@ Go's declaration syntax allows grouping of declarations. A single doc comment ca
 
 Go的声明语法允许成组声明。单个文档注释应介绍一组相关的常量或变量。 由于是整体声明，这种注释往往较为笼统。
 
-```
+```go
 // Error codes returned by failures to parse an expression.
 var (
 	ErrInternal      = errors.New("regexp: internal error")
@@ -126,7 +126,7 @@ var (
 	...
 )
 ```
-```
+```go
 // 表达式解析失败后返回错误代码。
 var (
 	ErrInternal      = errors.New("regexp: internal error")
@@ -139,7 +139,7 @@ Grouping can also indicate relationships between items, such as the fact that a 
 
 即便是对于私有名称，也可通过成组声明来表明各项间的关系，例如某一组由互斥体保护的变量。
 
-```
+```go
 var (
 	countLock   sync.Mutex
 	inputCount  uint32

@@ -10,8 +10,10 @@
 > 我非常的赞同。英语和计算机技能是相辅相成，学习好一门编程语言（`Go`）的同时，还能加强英语学习，何乐而不为。所以我决定将本书改版成中英双语版，方便更多的人来学习阅读。
 
 > 特别感谢 [Golang](https://golang.org) 官网提供的英文版教程。
-感谢 [hellogcc](http://www.hellogcc.org) 提供的 [中文翻译版一](http://www.hellogcc.org/effective_go.html)，这是我之前制作中文版电子书所参考的资料，翻译的很用心。
-要更感谢 [Go 语言中文社区](https://go-zh.org/) 提供的 [中文翻译版二](https://go-zh.org/doc/effective_go.htm)，此翻译更贴切有味道，不可多得。本人正在争取社区的统一，准备将此作为双语版的中文版本。
+
+> 感谢 [hellogcc](http://www.hellogcc.org) 提供的 [中文翻译版一](http://www.hellogcc.org/effective_go.html)，这是我之前制作中文版电子书所参考的资料，翻译的很用心。
+
+> 要更感谢 [Go 语言中文社区](https://go-zh.org/) 提供的 [中文翻译版二](https://go-zh.org/doc/effective_go.htm)，此翻译更贴切有味道，不可多得。本人正在争取社区的同意，准备将此作为双语版的中文版本。
 
 ### 参考
 

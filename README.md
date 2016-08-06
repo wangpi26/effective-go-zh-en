@@ -3,11 +3,15 @@
 
 `Effective Go` 作为 `GO` 语言的入门必读教程，值得每位初学者好好阅读一遍，编辑成书，方便阅读交流。
 
-> 改版说明：2016.8.6
+> 改版说明：@2016.8.6 by bingoHuang, revision to Chinese & English version.
 
-> 李笑来说过[一句话](http://xiaolai.li/2016/06/12/makecs-preface/)： 在中国，对绝大多数人来说，`English + Computer Skills = Freedom` 我非常的赞同。能在学习好一门编程语言（`Go`）的同时，还能加强英语学习，何乐而不为呢。所以我决定将本书改版成中英双语版，方便更多的人来学习。
+> 李笑来在他的新书[《人人都是工程师》](http://xiaolai.li/2016/06/12/makecs-preface/)中说过一句话： 在中国，对绝大多数人来说，**`English + Computer Skills = Freedom`**
 
-> 特别感谢 [Golang](https://golang.org) 官网提供的英文版教程。感谢 [hellogcc](http://www.hellogcc.org) 提供的 [中文翻译版一](http://www.hellogcc.org/effective_go.html)，这是我之前制作中文版电子书所参考的资料，翻译的很用心。这里要更感谢 [Go 语言中文社区](https://go-zh.org/) 提供的 [中文翻译版二](https://go-zh.org/doc/effective_go.htm)，翻译的更贴切自然，故此双语版决定选择该版本。
+> 我非常的赞同。英语和计算机技能是相辅相成，学习好一门编程语言（`Go`）的同时，还能加强英语学习，何乐而不为。所以我决定将本书改版成中英双语版，方便更多的人来学习阅读。
+
+> 特别感谢 [Golang](https://golang.org) 官网提供的英文版教程。
+感谢 [hellogcc](http://www.hellogcc.org) 提供的 [中文翻译版一](http://www.hellogcc.org/effective_go.html)，这是我之前制作中文版电子书所参考的资料，翻译的很用心。
+要更感谢 [Go 语言中文社区](https://go-zh.org/) 提供的 [中文翻译版二](https://go-zh.org/doc/effective_go.htm)，此翻译更贴切有味道，不可多得。本人正在争取社区的统一，准备将此作为双语版的中文版本。
 
 ### 参考
 
@@ -17,21 +21,23 @@
 
 *参考中文翻译版二：[Effective Go 中文版](https://go-zh.org/doc/effective_go.htm)*
 
-### Fork and Read
+### Read, Fork and Star
 
-> **[Fork me on GitHub](https://github.com/bingoHuang/effective-go-zh-en)**
++ **[Read on Gitbook](https://www.gitbook.com/book/bingohuang/effective-go-zh-en/details)**
 
-> **[Read me on Gitbook](https://www.gitbook.com/book/bingohuang/effective-go-zh-en/details)**
++ **[Fork on GitHub](https://github.com/bingoHuang/effective-go-zh-en)**
+
++ 请不要吝啬您的 `STAT` ，这是对我最大的支持！
 
 ## 当前完成章节（持续更新）：
 
 ### 已完成：
-0. [前言](README.md)
-* [引言](01_Overview.md)
-* [格式化](02_Formatting.md)
+1. [前言](README.md)
+2. [引言](01_Overview.md)
+3. [格式化](02_Formatting.md)
+4. [注释](03_Commentary.md)
 
 ### 未完成：
-* [注释](03_Commentary.md)
 * [命名](04_Names.md)
 * [分号](05_Semicolons.md)
 * [控制结构](06_Control_structures.md)
@@ -62,4 +68,4 @@ Go 是一门全新的语言。尽管它从既有的语言中借鉴了许多理�
 本文档就如何编写清晰、地道的Go代码提供了一些技巧。它是对[语言规范](https://go-zh.org/ref/spec)、 [Go语言之旅](https://tour.golang.org/)以及[如何使用Go编程](https://go-zh.org/doc/code.html)的补充说明，因此我们建议您先阅读这些文档。
 
 ## License
-除特别注明外， 本页内容均采用知识共享-署名（CC-BY）3.0协议授权，代码采用BSD协议授权。
+除特别注明外， 本页内容均采用知识共享-署名（CC-BY）3.0协议授权，代码采用[BSD协议](LICENSE)授权。

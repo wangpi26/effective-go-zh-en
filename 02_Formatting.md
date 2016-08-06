@@ -1,43 +1,74 @@
+## Formatting
+
 ## 格式化
-格式化是一个最具争议，但又无关紧要的问题。人们可以习惯于不同的格式风格。但是，最好不必这样，这就不用在每个人是否遵守相同风格的话题上花费时间了。问题是在没有一个长效的风格指导下，如何达到这样美好的乌托邦。
 
-对于Go，我们采取了不同寻常的方式，让机器来处理大多数的格式问题。程序gofmt（也可以用 *go fmt*，其操作于程序包的级别，而不是源文件级别），读入一个Go程序，然后输出按照标准风格缩进和垂直对齐的源码，并且保留了根据需要进行重新格式化的注释。如果你想知道如何处理某种新的布局情况，可以运行gofmt；如果答案看起来不正确，则需要重新组织你的程序（或者提交一个关于 *gofmt* 的bug），不要把问题绕过去。
+Formatting issues are the most contentious but the least consequential. People can adapt to different formatting styles but it's better if they don't have to, and less time is devoted to the topic if everyone adheres to the same style. The problem is how to approach this Utopia without a long prescriptive style guide.
 
-举个例子，不需要花费时间对结构体中每个域的注释进行排列。Gofmt将会替你完成这些。给定一个声明
+格式化问题总是充满了争议，但却始终没有形成统一的定论。虽说人们可以适应不同的编码风格， 但抛弃这种适应过程岂不更好？若所有人都遵循相同的编码风格，在这类问题上浪费的时间将会更少。 问题就在于如何实现这种设想，而无需冗长的语言风格规范。
 
-```
-type T struct {
-    name string // name of the object
-    value int // its value
-}
-```
+With Go we take an unusual approach and let the machine take care of most formatting issues. The gofmt program (also available as go fmt, which operates at the package level rather than source file level) reads a Go program and emits the source in a standard style of indentation and vertical alignment, retaining and if necessary reformatting comments. If you want to know how to handle some new layout situation, run gofmt; if the answer doesn't seem right, rearrange your program (or file a bug about gofmt), don't work around it.
 
-gofmt将会按列进行排列：
+在Go中我们另辟蹊径，让机器来处理大部分的格式化问题。gofmt 程序（也可用 go fmt，它以包为处理对象而非源文件）将Go程序按照标准风格缩进、 对齐，保留注释并在需要时重新格式化。若你想知道如何处理一些新的代码布局，请尝试运行 gofmt；若结果仍不尽人意，请重新组织你的程序（或提交有关 gofmt 的Bug），而不必为此纠结。
+
+As an example, there's no need to spend time lining up the comments on the fields of a structure. Gofmt will do that for you. Given the declaration
+
+举例来说，你无需花时间将结构体中的字段注释对齐，gofmt 将为你代劳。 假如有以下声明：
 
 ```
 type T struct {
-    name    string // name of the object
-    value   int    // its value
+	name string // name of the object
+	value int // its value
+}
+```
+```
+type T struct {
+	name string // 对象名
+	value int // 对象值
 }
 ```
 
-标准程序包中的所有Go代码，都已经使用gofmt进行了格式化。
+gofmt will line up the columns:
 
-还是有一些格式化的细节的。非常简短：
-
-**缩进**
-
-&#160; &#160;我们使用tab进行缩进，这是gofmt的缺省输出。只有在你必须的时候才使用空格。
-
-**行长度**
-
-&#160; &#160;Go没有行长度限制。不必担心会有打孔卡片溢出。如果感觉一行太长，可以折成几行，并额外使用一个tab进行缩进。
-
-**括号**
-
-&#160; &#160;Go相比C和Java，很少需要括号：控制结构（if，for，switch）的语法不需要括号。而且，操作符优先级更短，更清晰。这个表达式：
+gofmt 会将它按列对齐为：
 
 ```
-x<<8 + y<<16
+type T struct {
+	name    string // name of the object
+	value   int    // its value
+}
 ```
-含义就已经由空格表明了，这不像其它语言。
+```
+type T struct {
+	name    string // 对象名
+	value   int    // 对象值
+}
+```
+
+All Go code in the standard packages has been formatted with gofmt.
+
+标准包中所有的Go代码都已经用 gofmt 格式化过了。
+
+Some formatting details remain. Very briefly:
+
+还有一些关于格式化的细节，它们非常简短：
+
+```
+Indentation
+  We use tabs for indentation and gofmt emits them by default. Use spaces only if you must.
+Line length
+  Go has no line length limit. Don't worry about overflowing a punched card. If a line feels too long, wrap it and indent with an extra tab.
+Parentheses
+  Go needs fewer parentheses than C and Java: control structures (if, for, switch) do not have parentheses in their syntax. Also, the operator precedence hierarchy is shorter and clearer, so
+    x<<8 + y<<16
+  means what the spacing implies, unlike in the other languages.
+```
+```
+缩进
+  我们使用制表符（tab）缩进，gofmt 默认也使用它。在你认为确实有必要时再使用空格。
+行的长度
+  Go对行的长度没有限制，别担心打孔纸不够长。如果一行实在太长，也可进行折行并插入适当的tab缩进。
+括号
+  比起C和Java，Go所需的括号更少：控制结构（if、for 和 switch）在语法上并不需要圆括号。此外，操作符优先级处理变得更加简洁，因此
+    x<<8 + y<<16
+  正表述了空格符所传达的含义。
+```  

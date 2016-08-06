@@ -28,9 +28,9 @@
 ### 已完成：
 0. [前言](README.md)
 * [引言](01_Overview.md)
+* [格式化](02_Formatting.md)
 
 ### 未完成：
-* [格式化](02_Formatting.md)
 * [注释](03_Commentary.md)
 * [命名](04_Names.md)
 * [分号](05_Semicolons.md)

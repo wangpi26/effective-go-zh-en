@@ -1,7 +1,18 @@
-## 简介
-Go 是一个新的语言。虽然是借鉴了现有的语言，但是它独有的特性可以使得高效的 Go 程序，与其它语言编写的程序相比，大不相同。直接将 C++ 或者 Java 程序转换为 Go 程序，是不可能产生令人满意的结果—— Java 程序是使用 Java 编写的，而不是 Go。另一方面，从 Go 的角度考虑问题则会产生成功的、而且大不相同的程序。换句话说，想要编写好的 Go 程序，理解它的特性和风格是非常重要的。了解 Go 语言编程中已有的约定也非常重要，例如命名、格式、程序结构等等。这会使得其他Go程序员容易理解你编写的程序。
+## Introduction
+## 引言
 
-该文档对如何编写清晰，符合语言规范的 Go 代码，给出了一些建议。你应该先阅读 [language specification](https://golang.org/ref/spec)，[Tour of Go](http://tour.golang.org/) 和 [How to Write Go Code](https://golang.org/doc/code.html)，然后将该文档作为扩展阅读。
+Go is a new language. Although it borrows ideas from existing languages, it has unusual properties that make effective Go programs different in character from programs written in its relatives. A straightforward translation of a C++ or Java program into Go is unlikely to produce a satisfactory result—Java programs are written in Java, not Go. On the other hand, thinking about the problem from a Go perspective could produce a successful but quite different program. In other words, to write Go well, it's important to understand its properties and idioms. It's also important to know the established conventions for programming in Go, such as naming, formatting, program construction, and so on, so that programs you write will be easy for other Go programmers to understand.
 
-### 例子
-[Go package sources](https://golang.org/src/) 旨在不仅作为核心库来使用，而且还可以作为如何使用语言的例子。此外，许多程序包都包含了可以在[golang.org](http://golang.org/) 网站上独立执行的例子，例如[这一个](http://golang.org/pkg/strings/#example_Map)（如果需要，点击单词"Example"来打开）。如果你对如何处理一个问题，或者如何进行实现有疑问，那么库中的文档，代码和例子可以提供答案，概念和背景。
+Go 是一门全新的语言。尽管它从既有的语言中借鉴了许多理念，但其与众不同的特性， 使得使用Go编程在本质上就不同于其它语言。将现有的C++或Java程序直译为Go 程序并不能令人满意——毕竟Java程序是用Java编写的，而不是Go。 另一方面，若从Go的角度去分析问题，你就能编写出同样可行但大不相同的程序。 换句话说，要想将Go程序写得好，就必须理解其特性和风格。了解命名、格式化、 程序结构等既定规则也同样重要，这样你编写的程序才能更容易被其他程序员所理解。
+
+This document gives tips for writing clear, idiomatic Go code. It augments the [language specification](https://go-zh.org/ref/spec), [the Tour of Go](https://tour.golang.org/), and [How to Write Go Code](https://go-zh.org/doc/code.html), all of which you should read first.
+
+本文档就如何编写清晰、地道的Go代码提供了一些技巧。它是对[语言规范](https://go-zh.org/ref/spec)、 [Go语言之旅](https://tour.golang.org/)以及[如何使用Go编程](https://go-zh.org/doc/code.html)的补充说明，因此我们建议您先阅读这些文档。
+
+### Examples
+
+### 示例
+
+The [Go package sources](https://golang.org/src/) are intended to serve not only as the core library but also as examples of how to use the language. Moreover, many of the packages contain working, self-contained executable examples you can run directly from the [golang.org](https://golang.org/) web site, such as [this one](https://golang.org/pkg/strings/#example_Map) (if necessary, click on the word "Example" to open it up). If you have a question about how to approach a problem or how something might be implemented, the documentation, code and examples in the library can provide answers, ideas and background.
+
+[Go包的源码](https://golang.org/src/)不仅是核心库，同时也是学习如何使用Go语言的示例源码。 此外，其中的一些包还包含了可工作的，独立的可执行示例，你可以直接在 [golang.org](https://golang.org/)  网站上运行它们，比如 [这个例子](https://golang.org/pkg/strings/#example_Map) （单击文字“示例”来展开它）。如果你有任何关于某些问题如何解决，或某些东西如何实现的疑问， 也可以从中获取相关的答案、思路以及后台实现。

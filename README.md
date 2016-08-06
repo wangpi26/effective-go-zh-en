@@ -1,37 +1,56 @@
 `《Effective Go》` 作为 `GO` 语言的入门必读教程，值得每位初学者好好阅读一遍，编辑成书，方便阅读交流。
 
-*参考官方版：[Effective Go](https://golang.org/doc/effective_go.html)*
+> 改版说明：2016.8.6
 
-*参考翻译版：[Effective Go](http://www.hellogcc.org/effective_go.html)*
+> 李笑来说过一句话： 在中国，对绝大多数人来说，`English + Computer Skills = Freedom` 我非常的赞同。能在学习好一门编程语言（`Go`）的同时，还能加强英语学习，何乐而不为呢。所以我决定将本书改版成中英双语版，方便更多的人来学习。
 
-**[Fork me on GitHub](https://github.com/bingoHuang/effective-go-cn-gitbook)**
+> 特别感谢 [Golang](https://golang.org) 官网提供的英文版教程。感谢 [hellogcc](http://www.hellogcc.org) 提供的 [中文翻译版一](http://www.hellogcc.org/effective_go.html)，这是我之前制作中文版电子书所参考的资料，翻译的很用心。这里要更感谢 [Go 语言中文社区](https://go-zh.org/) 提供的 [中文翻译版二](https://go-zh.org/doc/effective_go.htm)，翻译的更贴切自然，故此双语版决定选择该版本。
+
+*参考官方英文版：[Effective Go 英文版](https://golang.org/doc/effective_go.html)*
+
+~~*参考中文翻译版一：[Effective Go 中文版](http://www.hellogcc.org/effective_go.html)*~~
+
+*参考中文翻译版二：[Effective Go 中文版](https://go-zh.org/doc/effective_go.htm)*
+
+> **[Fork me on GitHub](https://github.com/bingoHuang/effective-go-zh-en)**
 
 ## 当前完成章节（持续更新）：
 
 ### 已完成：
-0. [简介](01_Overview.md)
-* [格式](02_Formatting.md)
-* [注释](03_Commentary.md)
+0. [前言](README.md)
+* [引言](01_Overview.md)
 
 ### 未完成：
+* [格式化](02_Formatting.md)
+* [注释](03_Commentary.md)
 * [命名](04_Names.md)
 * [分号](05_Semicolons.md)
-* [控制](06_Control_structures.md)
+* [控制结构](06_Control_structures.md)
 * [函数](07_Functions.md)
 * [数据](08_Data.md)
-* [初始](09_Initialization.md)
+* [初始化](09_Initialization.md)
 * [方法](10_Methods.md)
-* [接口](11_Interfaces_and_other_types.md)
-* [空符](12_The_blank_identifier.md)
+* [接口和其他类型](11_Interfaces_and_other_types.md)
+* [空白标识符](12_The_blank_identifier.md)
 * [内嵌](13_Embedding.md)
 * [并发](14_Concurrency.md)
 * [错误](15_Errors.md)
-* [服务](16_A_web_server.md)
+* [一个Web服务器](16_A_web_server.md)
 
-### 遗留下
-* 为了统一标题，我都用了两个描述，基本都能表达意思，但有个别标题需要额外理解，比如`空符`表示`空白的标识符`。。。
+## *Effective Go* - 《实效 GO 编程》
 
-## 简介
-`Go` 是一个新的语言。虽然是借鉴了现有的语言，但是它独有的特性可以使得高效的 Go 程序，与其它语言编写的程序相比，大不相同。直接将 C++ 或者 Java 程序转换为 Go 程序，是不可能产生令人满意的结果—— Java 程序是使用 Java 编写的，而不是 Go。另一方面，从 Go 的角度考虑问题则会产生成功的、而且大不相同的程序。换句话说，想要编写好的 Go 程序，理解它的特性和风格是非常重要的。了解 Go 语言编程中已有的约定也非常重要，例如命名、格式、程序结构等等。这会使得其他Go程序员容易理解你编写的程序。
+### Introduction
 
-该文档对如何编写清晰，符合语言规范的 Go 代码，给出了一些建议。你应该先阅读 [language specification](https://golang.org/ref/spec)，[Tour of Go](http://tour.golang.org/) 和 [How to Write Go Code](https://golang.org/doc/code.html)，然后将该文档作为扩展阅读。
+Go is a new language. Although it borrows ideas from existing languages, it has unusual properties that make effective Go programs different in character from programs written in its relatives. A straightforward translation of a C++ or Java program into Go is unlikely to produce a satisfactory result—Java programs are written in Java, not Go. On the other hand, thinking about the problem from a Go perspective could produce a successful but quite different program. In other words, to write Go well, it's important to understand its properties and idioms. It's also important to know the established conventions for programming in Go, such as naming, formatting, program construction, and so on, so that programs you write will be easy for other Go programmers to understand.
+
+This document gives tips for writing clear, idiomatic Go code. It augments the [language specification](https://go-zh.org/ref/spec), [the Tour of Go](https://tour.golang.org/), and [How to Write Go Code](https://go-zh.org/doc/code.html), all of which you should read first.
+
+
+### 引言
+
+Go 是一门全新的语言。尽管它从既有的语言中借鉴了许多理念，但其与众不同的特性， 使得使用Go编程在本质上就不同于其它语言。将现有的C++或Java程序直译为Go 程序并不能令人满意——毕竟Java程序是用Java编写的，而不是Go。 另一方面，若从Go的角度去分析问题，你就能编写出同样可行但大不相同的程序。 换句话说，要想将Go程序写得好，就必须理解其特性和风格。了解命名、格式化、 程序结构等既定规则也同样重要，这样你编写的程序才能更容易被其他程序员所理解。
+
+本文档就如何编写清晰、地道的Go代码提供了一些技巧。它是对[语言规范](https://go-zh.org/ref/spec)、 [Go语言之旅](https://tour.golang.org/)以及[如何使用Go编程](https://go-zh.org/doc/code.html)的补充说明，因此我们建议您先阅读这些文档。
+
+## License
+除特别注明外， 本页内容均采用知识共享-署名（CC-BY）3.0协议授权，代码采用BSD协议授权。

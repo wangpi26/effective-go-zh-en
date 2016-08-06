@@ -1,10 +1,15 @@
-`《Effective Go》` 作为 `GO` 语言的入门必读教程，值得每位初学者好好阅读一遍，编辑成书，方便阅读交流。
+《Effective Go》中英双语版
+===
+
+`Effective Go` 作为 `GO` 语言的入门必读教程，值得每位初学者好好阅读一遍，编辑成书，方便阅读交流。
 
 > 改版说明：2016.8.6
 
-> 李笑来说过一句话： 在中国，对绝大多数人来说，`English + Computer Skills = Freedom` 我非常的赞同。能在学习好一门编程语言（`Go`）的同时，还能加强英语学习，何乐而不为呢。所以我决定将本书改版成中英双语版，方便更多的人来学习。
+> 李笑来说过[一句话](http://xiaolai.li/2016/06/12/makecs-preface/)： 在中国，对绝大多数人来说，`English + Computer Skills = Freedom` 我非常的赞同。能在学习好一门编程语言（`Go`）的同时，还能加强英语学习，何乐而不为呢。所以我决定将本书改版成中英双语版，方便更多的人来学习。
 
 > 特别感谢 [Golang](https://golang.org) 官网提供的英文版教程。感谢 [hellogcc](http://www.hellogcc.org) 提供的 [中文翻译版一](http://www.hellogcc.org/effective_go.html)，这是我之前制作中文版电子书所参考的资料，翻译的很用心。这里要更感谢 [Go 语言中文社区](https://go-zh.org/) 提供的 [中文翻译版二](https://go-zh.org/doc/effective_go.htm)，翻译的更贴切自然，故此双语版决定选择该版本。
+
+### 参考
 
 *参考官方英文版：[Effective Go 英文版](https://golang.org/doc/effective_go.html)*
 
@@ -12,7 +17,11 @@
 
 *参考中文翻译版二：[Effective Go 中文版](https://go-zh.org/doc/effective_go.htm)*
 
+### Fork and Read
+
 > **[Fork me on GitHub](https://github.com/bingoHuang/effective-go-zh-en)**
+
+> **[Read me on Gitbook](https://www.gitbook.com/book/bingohuang/effective-go-zh-en/details)**
 
 ## 当前完成章节（持续更新）：
 

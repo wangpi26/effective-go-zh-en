@@ -51,7 +51,7 @@ Go 是一门全新的语言。尽管它从既有的语言中借鉴了许多理�
 
 > 感谢 [hellogcc](http://www.hellogcc.org) 提供的 [中文翻译版一](http://www.hellogcc.org/effective_go.html)，这是我之前制作中文版电子书所参考的资料，翻译的很用心。
 
-> 要更感谢 [Go 语言中文社区](https://go-zh.org/) 提供的 [中文翻译版二](https://go-zh.org/doc/effective_go.htm)，此翻译更贴切有味道，不可多得。本人已和 [Go-zh项目组](https://go-zh.org/) 沟通过，获取了该社区的授权，故将此作为双语版的中文版本。
+> 要更感谢 [Go 语言中文社区](https://go-zh.org/) 提供的 [中文翻译版二](https://go-zh.org/doc/effective_go.htm)，此翻译更贴切有味道，不可多得。本人已和 [Go-zh 项目组](https://github.com/Go-zh/go) 沟通过，获取了该社区的授权，故将此作为双语版的中文版本。
 
 ### 参考
 

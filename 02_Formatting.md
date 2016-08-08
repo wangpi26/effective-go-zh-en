@@ -8,7 +8,7 @@ Formatting issues are the most contentious but the least consequential. People c
 
 With Go we take an unusual approach and let the machine take care of most formatting issues. The gofmt program (also available as go fmt, which operates at the package level rather than source file level) reads a Go program and emits the source in a standard style of indentation and vertical alignment, retaining and if necessary reformatting comments. If you want to know how to handle some new layout situation, run gofmt; if the answer doesn't seem right, rearrange your program (or file a bug about gofmt), don't work around it.
 
-在Go中我们另辟蹊径，让机器来处理大部分的格式化问题。gofmt 程序（也可用 go fmt，它以包为处理对象而非源文件）将Go程序按照标准风格缩进、 对齐，保留注释并在需要时重新格式化。若你想知道如何处理一些新的代码布局，请尝试运行 gofmt；若结果仍不尽人意，请重新组织你的程序（或提交有关 gofmt 的Bug），而不必为此纠结。
+在 Go 中我们另辟蹊径，让机器来处理大部分的格式化问题。gofmt 程序（也可用 go fmt，它以包为处理对象而非源文件）将 Go 程序按照标准风格缩进、 对齐，保留注释并在需要时重新格式化。若你想知道如何处理一些新的代码布局，请尝试运行 gofmt；若结果仍不尽人意，请重新组织你的程序（或提交有关 gofmt 的 Bug），而不必为此纠结。
 
 As an example, there's no need to spend time lining up the comments on the fields of a structure. Gofmt will do that for you. Given the declaration
 
@@ -46,7 +46,7 @@ type T struct {
 
 All Go code in the standard packages has been formatted with gofmt.
 
-标准包中所有的Go代码都已经用 gofmt 格式化过了。
+标准包中所有的 Go 代码都已经用 gofmt 格式化过了。
 
 Some formatting details remain. Very briefly:
 
@@ -66,9 +66,9 @@ Parentheses
 缩进
   我们使用制表符（tab）缩进，gofmt 默认也使用它。在你认为确实有必要时再使用空格。
 行的长度
-  Go对行的长度没有限制，别担心打孔纸不够长。如果一行实在太长，也可进行折行并插入适当的tab缩进。
+  Go 对行的长度没有限制，别担心打孔纸不够长。如果一行实在太长，也可进行折行并插入适当的 tab 缩进。
 括号
-  比起C和Java，Go所需的括号更少：控制结构（if、for 和 switch）在语法上并不需要圆括号。此外，操作符优先级处理变得更加简洁，因此
+  比起 C 和 Java，Go 所需的括号更少：控制结构（if、for 和 switch）在语法上并不需要圆括号。此外，操作符优先级处理变得更加简洁，因此
     x<<8 + y<<16
   正表述了空格符所传达的含义。
 ```

@@ -4,13 +4,13 @@
 
 The control structures of Go are related to those of C but differ in important ways. There is no do or while loop, only a slightly generalized for; switch is more flexible; if and switch accept an optional initialization statement like that of for; break and continue statements take an optional label to identify what to break or continue; and there are new control structures including a type switch and a multiway communications multiplexer, select. The syntax is also slightly different: there are no parentheses and the bodies must always be brace-delimited.
 
-Go中的结构控制与C有许多相似之处，但其不同之处才是独到之处。 Go不再使用 do 或 while 循环，只有一个更通用的 for；switch 要更灵活一点；if 和 switch 像 for一样可接受可选的初始化语句； 此外，还有一个包含类型选择和多路通信复用器的新控制结构：select。 其语法也有些许不同：没有圆括号，而其主体必须始终使用大括号括住。
+Go 中的结构控制与 C 有许多相似之处，但其不同之处才是独到之处。 Go 不再使用 do 或 while 循环，只有一个更通用的 for；switch 要更灵活一点；if 和 switch 像 for 一样可接受可选的初始化语句； 此外，还有一个包含类型选择和多路通信复用器的新控制结构：select。 其语法也有些许不同：没有圆括号，而其主体必须始终使用大括号括住。
 
 ### If
 
 In Go a simple if looks like this:
 
-在Go中，一个简单的 if 语句看起来像这样：
+在 Go 中，一个简单的 if 语句看起来像这样：
 
 ```go
 if x > 0 {
@@ -33,7 +33,7 @@ if err := file.Chmod(0664); err != nil {
 ```
 In the Go libraries, you'll find that when an if statement doesn't flow into the next statement—that is, the body ends in break, continue, goto, or return—the unnecessary else is omitted.
 
-在Go的库中，你会发现若 if 语句不会执行到下一条语句时，亦即其执行体 以 break、continue、goto 或 return 结束时，不必要的 else 会被省略。
+在 Go 的库中，你会发现若 if 语句不会执行到下一条语句时，亦即其执行体 以 break、continue、goto 或 return 结束时，不必要的 else 会被省略。
 
 ```go
 f, err := os.Open(name)
@@ -44,7 +44,7 @@ codeUsing(f)
 ```
 This is an example of a common situation where code must guard against a sequence of error conditions. The code reads well if the successful flow of control runs down the page, eliminating error cases as they arise. Since error cases tend to end in return statements, the resulting code needs no else statements.
 
-下例是一种常见的情况，代码必须防范一系列的错误条件。若控制流成功继续， 则说明程序已排除错误。由于出错时将以return 结束， 之后的代码也就无需 else 了。
+下例是一种常见的情况，代码必须防范一系列的错误条件。若控制流成功继续， 则说明程序已排除错误。由于出错时将以 return 结束， 之后的代码也就无需 else 了。
 
 ```go
 f, err := os.Open(name)
@@ -89,7 +89,7 @@ In a := declaration a variable v may appear even if it has already been declared
 + there is at least one other variable in the declaration that is being declared anew.
 
 
-+ 本次声明与已声明的 v 处于同一作用域中（若 v 已在外层作用域中声明过，则此次声明会创建一个新的变量§），
++ 本次声明与已声明的 v 处于同一作用域中（若 v 已在外层作用域中声明过，则此次声明会创建一个新的变量 §），
 + 在初始化中与其类型相应的值才能赋予 v，且
 + 在此次声明中至少另有一个变量是新声明的。
 
@@ -99,13 +99,13 @@ This unusual property is pure pragmatism, making it easy to use a single err val
 
 § It's worth noting here that in Go the scope of function parameters and return values is the same as the function body, even though they appear lexically outside the braces that enclose the body.
 
-§值得一提的是，即便Go中的函数形参和返回值在词法上处于大括号之外， 但它们的作用域和该函数体仍然相同。
+§ 值得一提的是，即便 Go 中的函数形参和返回值在词法上处于大括号之外， 但它们的作用域和该函数体仍然相同。
 
 ### For
 
 The Go for loop is similar to—but not the same as—C's. It unifies for and while and there is no do-while. There are three forms, only one of which has semicolons.
 
-Go的 for 循环类似于C，但却不尽相同。它统一了 for 和 while，不再有 do-while 了。它有三种形式，但只有一种需要分号。
+Go 的 for 循环类似于 C，但却不尽相同。它统一了 for 和 while，不再有 do-while 了。它有三种形式，但只有一种需要分号。
 
 ```go
 // Like a C for
@@ -118,13 +118,13 @@ for condition { }
 for { }
 ```
 ```go
-// 如同C的for循环
+// 如同 C 的 for 循环
 for init; condition; post { }
 
-// 如同C的while循环
+// 如同 C 的 while 循环
 for condition { }
 
-// 如同C的for(;;)循环
+// 如同 C 的 for(;;) 循环
 for { }
 ```
 Short declarations make it easy to declare the index variable right in the loop.
@@ -203,7 +203,7 @@ for pos, char := range "日本\x80語" { // \x80 是个非法的UTF-8编码
 ```
 Finally, Go has no comma operator and ++ and -- are statements not expressions. Thus if you want to run multiple variables in a for you should use parallel assignment (although that precludes ++ and --).
 
-最后，Go没有逗号操作符，而 ++ 和 -- 为语句而非表达式。 因此，若你想要在 for 中使用多个变量，应采用平行赋值的方式 （因为它会拒绝 ++ 和 --）.
+最后，Go 没有逗号操作符，而 ++ 和 -- 为语句而非表达式。 因此，若你想要在 for 中使用多个变量，应采用平行赋值的方式 （因为它会拒绝 ++ 和 --）.
 
 ```go
 // Reverse a

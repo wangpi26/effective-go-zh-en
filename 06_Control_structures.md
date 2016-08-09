@@ -173,10 +173,10 @@ The blank identifier has many uses, as described in a later section.
 
 For strings, the range does more work for you, breaking out individual Unicode code points by parsing the UTF-8. Erroneous encodings consume one byte and produce the replacement rune U+FFFD. (The name (with associated builtin type) rune is Go terminology for a single Unicode code point. See the language specification for details.) The loop
 
-对于字符串，range 能够提供更多便利。它能通过解析UTF-8， 将每个独立的Unicode码点分离出来。错误的编码将占用一个字节，并以符文U+FFFD来代替。 （名称“符文”和内建类型 rune 是Go对单个Unicode码点的成称谓。 详情见语言规范）。循环
+对于字符串，range 能够提供更多便利。它能通过解析 UTF-8， 将每个独立的 Unicode 码点分离出来。错误的编码将占用一个字节，并以符文 U+FFFD 来代替。 （名称 “符文” 和内建类型 rune 是 Go 对单个 Unicode 码点的成称谓。 详情见语言规范）。循环
 
 ```go
-for pos, char := range "日本\x80語" { // \x80 is an illegal UTF-8 encoding
+for pos, char := range "日本 \ x80 語" { // \x80 is an illegal UTF-8 encoding
 	fmt.Printf("character %#U starts at byte position %d\n", char, pos)
 }
 ```
@@ -221,7 +221,7 @@ for i, j := 0, len(a)-1; i < j; i, j = i+1, j-1 {
 
 Go's switch is more general than C's. The expressions need not be constants or even integers, the cases are evaluated top to bottom until a match is found, and if the switch has no expression it switches on true. It's therefore possible—and idiomatic—to write an if-else-if-else chain as a switch.
 
-Go的 switch 比C的更通用。其表达式无需为常量或整数，case 语句会自上而下逐一进行求值直到匹配为止。若 switch 后面没有表达式，它将匹配 true，因此，我们可以将 if-else-if-else 链写成一个 switch，这也更符合Go的风格。
+Go 的 switch 比 C 的更通用。其表达式无需为常量或整数，case 语句会自上而下逐一进行求值直到匹配为止。若 switch 后面没有表达式，它将匹配 true，因此，我们可以将 if-else-if-else 链写成一个 switch，这也更符合 Go 的风格。
 
 ```go
 func unhex(c byte) byte {
@@ -249,9 +249,9 @@ func shouldEscape(c byte) bool {
 	return false
 }
 ```
-Although they are not nearly as common in Go as some other C-like languages, break statements can be used to terminate a switch early. Sometimes, though, it's necessary to break out of a surrounding loop, not the switch, and in Go that can be accomplished by putting a label on the loop and "breaking" to that label. This example shows both uses.
+Although they are not nearly as common in Go as some other C-like languages, break statements can be used to terminate a switch early. Sometimes, though, it's necessary to break out of a surrounding loop, not the switch, and in Go that can be accomplished by putting a label on the loop and"breaking" to that label. This example shows both uses.
 
-尽管它们在Go中的用法和其它类C语言差不多，但 break 语句可以使 switch 提前终止。不仅是 switch， 有时候也必须打破层层的循环。在Go中，我们只需将标签放置到循环外，然后 “蹦”到那里即可。下面的例子展示了二者的用法。
+尽管它们在 Go 中的用法和其它类 C 语言差不多，但 break 语句可以使 switch 提前终止。不仅是 switch， 有时候也必须打破层层的循环。在 Go 中，我们只需将标签放置到循环外，然后 “蹦” 到那里即可。下面的例子展示了二者的用法。
 
 ```go
 Loop:

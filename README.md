@@ -26,9 +26,9 @@ Go 是一门全新的语言。尽管它从既有的语言中借鉴了许多理�
 4. [注释](03_Commentary.md)
 5. [命名](04_Names.md)
 6. [分号](05_Semicolons.md)
+7. [控制结构](06_Control_structures.md)
 
 ### 未完成：
-* [控制结构](06_Control_structures.md)
 * [函数](07_Functions.md)
 * [数据](08_Data.md)
 * [初始化](09_Initialization.md)

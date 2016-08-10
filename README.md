@@ -29,9 +29,9 @@ Go 是一门全新的语言。尽管它从既有的语言中借鉴了许多理�
 7. [控制结构](06_Control_structures.md)
 8. [函数](07_Functions.md)
 9. [数据](08_Data.md)
+10. [初始化](09_Initialization.md)
 
 ### 未完成：
-* [初始化](09_Initialization.md)
 * [方法](10_Methods.md)
 * [接口和其他类型](11_Interfaces_and_other_types.md)
 * [空白标识符](12_The_blank_identifier.md)

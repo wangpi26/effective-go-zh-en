@@ -32,9 +32,9 @@ Go 是一门全新的语言。尽管它从既有的语言中借鉴了许多理�
 10. [初始化](09_Initialization.md)
 11. [方法](10_Methods.md)
 12. [接口和其他类型](11_Interfaces_and_other_types.md)
+13. [空白标识符](12_The_blank_identifier.md)
 
 ### 未完成：
-* [空白标识符](12_The_blank_identifier.md)
 * [内嵌](13_Embedding.md)
 * [并发](14_Concurrency.md)
 * [错误](15_Errors.md)

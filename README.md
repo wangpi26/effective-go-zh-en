@@ -31,9 +31,9 @@ Go 是一门全新的语言。尽管它从既有的语言中借鉴了许多理�
 9. [数据](08_Data.md)
 10. [初始化](09_Initialization.md)
 11. [方法](10_Methods.md)
+12. [接口和其他类型](11_Interfaces_and_other_types.md)
 
 ### 未完成：
-* [接口和其他类型](11_Interfaces_and_other_types.md)
 * [空白标识符](12_The_blank_identifier.md)
 * [内嵌](13_Embedding.md)
 * [并发](14_Concurrency.md)

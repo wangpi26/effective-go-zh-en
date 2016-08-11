@@ -4,7 +4,7 @@
 
 We've mentioned the blank identifier a couple of times now, in the context of for [range loops](https://go-zh.org/doc/effective_go.html#for) and [maps](https://go-zh.org/doc/effective_go.html#maps). The blank identifier can be assigned or declared with any value of any type, with the value discarded harmlessly. It's a bit like writing to the Unix /dev/null file: it represents a write-only value to be used as a place-holder where a variable is needed but the actual value is irrelevant. It has uses beyond those we've seen already.
 
-我们在 [for-range](https://go-zh.org/doc/effective_go.html#for) 循环和[映射](https://go-zh.org/doc/effective_go.html#maps)中提过几次空白标识符。 空白标识符可被赋予或声明为任何类型的任何值，而其值会被无害地丢弃。它有点像Unix中的 /dev/null 文件：它表示只写的值，在需要变量但不需要实际值的地方用作占位符。 我们在前面已经见过它的用法了。
+我们在 [for-range](https://go-zh.org/doc/effective_go.html#for) 循环和 [映射](https://go-zh.org/doc/effective_go.html#maps) 中提过几次空白标识符。 空白标识符可被赋予或声明为任何类型的任何值，而其值会被无害地丢弃。它有点像 Unix 中的 /dev/null 文件：它表示只写的值，在需要变量但不需要实际值的地方用作占位符。 我们在前面已经见过它的用法了。
 
 The blank identifier in multiple assignment
 
@@ -47,7 +47,7 @@ if fi.IsDir() {
 
 It is an error to import a package or to declare a variable without using it. Unused imports bloat the program and slow compilation, while a variable that is initialized but not used is at least a wasted computation and perhaps indicative of a larger bug. When a program is under active development, however, unused imports and variables often arise and it can be annoying to delete them just to have the compilation proceed, only to have them be needed again later. The blank identifier provides a workaround.
 
-若导入某个包或声明某个变量而不使用它就会产生错误。未使用的包会让程序膨胀并拖慢编译速度， 而已初始化但未使用的变量不仅会浪费计算能力，还有可能暗藏着更大的Bug。 然而在程序开发过程中，经常会产生未使用的导入和变量。虽然以后会用到它们， 但为了完成编译又不得不删除它们才行，这很让人烦恼。空白标识符就能提供一个工作空间。
+若导入某个包或声明某个变量而不使用它就会产生错误。未使用的包会让程序膨胀并拖慢编译速度， 而已初始化但未使用的变量不仅会浪费计算能力，还有可能暗藏着更大的 Bug。 然而在程序开发过程中，经常会产生未使用的导入和变量。虽然以后会用到它们， 但为了完成编译又不得不删除它们才行，这很让人烦恼。空白标识符就能提供一个工作空间。
 
 This half-written program has two unused imports (fmt and io) and an unused variable (fd), so it will not compile, but it would be nice to see if the code so far is correct.
 
@@ -107,7 +107,7 @@ By convention, the global declarations to silence import errors should come righ
 
 An unused import like fmt or io in the previous example should eventually be used or removed: blank assignments identify code as a work in progress. But sometimes it is useful to import a package only for its side effects, without any explicit use. For example, during its init function, the net/http/pprof package registers HTTP handlers that provide debugging information. It has an exported API, but most clients need only the handler registration and access the data through a web page. To import the package only for its side effects, rename the package to the blank identifier:
 
-像前例中 fmt 或 io 这种未使用的导入总应在最后被使用或移除： 空白赋值会将代码标识为工作正在进行中。但有时导入某个包只是为了其副作用， 而没有任何明确的使用。例如，在 net/http/pprof 包的 init 函数中记录了HTTP处理程序的调试信息。它有个可导出的API， 但大部分客户端只需要该处理程序的记录和通过Web叶访问数据。只为了其副作用来哦导入该包， 只需将包重命名为空白标识符：
+像前例中 fmt 或 io 这种未使用的导入总应在最后被使用或移除： 空白赋值会将代码标识为工作正在进行中。但有时导入某个包只是为了其副作用， 而没有任何明确的使用。例如，在 net/http/pprof 包的 init 函数中记录了 HTTP 处理程序的调试信息。它有个可导出的 API， 但大部分客户端只需要该处理程序的记录和通过 Web 叶访问数据。只为了其副作用来哦导入该包， 只需将包重命名为空白标识符：
 
 ```go
 import _ "net/http/pprof"
@@ -122,11 +122,11 @@ This form of import makes clear that the package is being imported for its side 
 
 As we saw in the discussion of [interfaces](https://go-zh.org/doc/effective_go.html#interfaces_and_types) above, a type need not declare explicitly that it implements an interface. Instead, a type implements the interface just by implementing the interface's methods. In practice, most interface conversions are static and therefore checked at compile time. For example, passing an `*os.File` to a function expecting an io.Reader will not compile unless `*os.File` implements the io.Reader interface.
 
-就像我们在前面[接口](https://go-zh.org/doc/effective_go.html#interfaces_and_types)中讨论的那样， 一个类型无需显式地声明它实现了某个接口。取而代之，该类型只要实现了某个接口的方法， 其实就实现了该接口。在实践中，大部分接口转换都是静态的，因此会在编译时检测。 例如，将一个 `*os.File` 传入一个预期的 io.Reader 函数将不会被编译， 除非 `*os.File` 实现了 io.Reader 接口。
+就像我们在前面 [接口](https://go-zh.org/doc/effective_go.html#interfaces_and_types) 中讨论的那样， 一个类型无需显式地声明它实现了某个接口。取而代之，该类型只要实现了某个接口的方法， 其实就实现了该接口。在实践中，大部分接口转换都是静态的，因此会在编译时检测。 例如，将一个 `*os.File` 传入一个预期的 io.Reader 函数将不会被编译， 除非 `*os.File` 实现了 io.Reader 接口。
 
 Some interface checks do happen at run-time, though. One instance is in the [encoding/json](https://go-zh.org/pkg/encoding/json/) package, which defines a [Marshaler](Marshaler) interface. When the JSON encoder receives a value that implements that interface, the encoder invokes the value's marshaling method to convert it to JSON instead of doing the standard conversion. The encoder checks this property at run time with a [type assertion](https://go-zh.org/doc/effective_go.html#interface_conversions) like:
 
-尽管有些接口检查会在运行时进行。[encoding/json](https://go-zh.org/pkg/encoding/json/) 包中就有个实例它定义了一个 [Marshaler](Marshaler) 接口。当JSON编码器接收到一个实现了该接口的值，那么该编码器就会调用该值的编组方法， 将其转换为JSON，而非进行标准的类型转换。 编码器在运行时通过[类型断言](https://go-zh.org/doc/effective_go.html#interface_conversions)检查其属性，就像这样：
+尽管有些接口检查会在运行时进行。[encoding/json](https://go-zh.org/pkg/encoding/json/) 包中就有个实例它定义了一个 [Marshaler](Marshaler) 接口。当 JSON 编码器接收到一个实现了该接口的值，那么该编码器就会调用该值的编组方法， 将其转换为 JSON，而非进行标准的类型转换。 编码器在运行时通过 [类型断言](https://go-zh.org/doc/effective_go.html#interface_conversions) 检查其属性，就像这样：
 
 ```go
 m, ok := val.(json.Marshaler)
@@ -142,7 +142,7 @@ if _, ok := val.(json.Marshaler); ok {
 ```
 One place this situation arises is when it is necessary to guarantee within the package implementing the type that it actually satisfies the interface. If a type—for example, [json.RawMessage](https://go-zh.org/pkg/encoding/json/#RawMessage)—needs a custom JSON representation, it should implement json.Marshaler, but there are no static conversions that would cause the compiler to verify this automatically. If the type inadvertently fails to satisfy the interface, the JSON encoder will still work, but will not use the custom implementation. To guarantee that the implementation is correct, a global declaration using the blank identifier can be used in the package:
 
-当需要确保某个包中实现的类型一定满足该接口时，就会遇到这种情况。 若某个类型（例如 [json.RawMessage](https://go-zh.org/pkg/encoding/json/#RawMessage)） 需要一种定制的JSON表现时，它应当实现 json.Marshaler， 不过现在没有静态转换可以让编译器去自动验证它。若该类型通过忽略转换失败来满足该接口， 那么JSON编码器仍可工作，但它却不会使用定制的实现。为确保其实现正确， 可在该包中用空白标识符声明一个全局变量：
+当需要确保某个包中实现的类型一定满足该接口时，就会遇到这种情况。 若某个类型（例如 [json.RawMessage](https://go-zh.org/pkg/encoding/json/#RawMessage)） 需要一种定制的 JSON 表现时，它应当实现 json.Marshaler， 不过现在没有静态转换可以让编译器去自动验证它。若该类型通过忽略转换失败来满足该接口， 那么 JSON 编码器仍可工作，但它却不会使用定制的实现。为确保其实现正确， 可在该包中用空白标识符声明一个全局变量：
 
 ```go
 var _ json.Marshaler = (*RawMessage)(nil)

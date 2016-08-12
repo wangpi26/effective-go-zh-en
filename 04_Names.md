@@ -14,7 +14,7 @@ When a package is imported, the package name becomes an accessor for the content
 
 当一个包被导入后，包名就会成了内容的访问器。在
 
-```
+``` go
 import "bytes"
 ```
 the importing package can talk about bytes.Buffer. It's helpful if everyone using the package can use the same name to refer to its contents, which implies that the package name should be good: short, concise, evocative. By convention, packages are given lower case, single-word names; there should be no need for underscores or mixedCaps. Err on the side of brevity, since everyone using your package will be typing that name. And don't worry about collisions a priori. The package name is only the default name for imports; it need not be unique across all source code, and in the rare case of a collision the importing package can choose a different name to use locally. In any case, confusion is rare because the file name in the import determines just which package is being used.
@@ -41,7 +41,7 @@ Go doesn't provide automatic support for getters and setters. There's nothing wr
 
 Go 并不对获取器（getter）和设置器（setter）提供自动支持。 你应当自己提供获取器和设置器，通常很值得这样做，但若要将 Get 放到获取器的名字中，既不符合习惯，也没有必要。若你有个名为 owner （小写，未导出）的字段，其获取器应当名为 Owner（大写，可导出）而非 GetOwner。大写字母即为可导出的这种规定为区分方法和字段提供了便利。 若要提供设置器方法，SetOwner 是个不错的选择。两个命名看起来都很合理：
 
-```
+``` go
 owner := obj.Owner()
 if owner != user {
 	obj.SetOwner(user)

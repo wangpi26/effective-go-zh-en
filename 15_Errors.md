@@ -6,7 +6,7 @@ Library routines must often return some sort of error indication to the caller. 
 
 By convention, errors have type error, a simple built-in interface.
 
-库例程通常需要向调用者返回某种类型的错误提示。之前提到过，Go语言的多值返回特性， 使得它在返回常规的值时，还能轻松地返回详细的错误描述。按照约定，错误的类型通常为 error，这是一个内建的简单接口。
+库例程通常需要向调用者返回某种类型的错误提示。之前提到过，Go 语言的多值返回特性， 使得它在返回常规的值时，还能轻松地返回详细的错误描述。按照约定，错误的类型通常为 error，这是一个内建的简单接口。
 
 ```go
 type error interface {
@@ -44,18 +44,18 @@ func (e *PathError) Error() string {
 ```
 PathError's Error generates a string like this:
 
-PathError的 Error 会生成如下错误信息：
+PathError 的 Error 会生成如下错误信息：
 
 ```go
 open /etc/passwx: no such file or directory
 ```
 Such an error, which includes the problematic file name, the operation, and the operating system error it triggered, is useful even if printed far from the call that caused it; it is much more informative than the plain "no such file or directory".
 
-这种错误包含了出错的文件名、操作和触发的操作系统错误，即便在产生该错误的调用 和输出的错误信息相距甚远时，它也会非常有用，这比苍白的“不存在该文件或目录”更具说明性。
+这种错误包含了出错的文件名、操作和触发的操作系统错误，即便在产生该错误的调用 和输出的错误信息相距甚远时，它也会非常有用，这比苍白的 “不存在该文件或目录” 更具说明性。
 
 When feasible, error strings should identify their origin, such as by having a prefix naming the operation or package that generated the error. For example, in package image, the string representation for a decoding error due to an unknown format is "image: unknown format".
 
-错误字符串应尽可能地指明它们的来源，例如产生该错误的包名前缀。例如在 image 包中，由于未知格式导致解码错误的字符串为“image: unknown format”。
+错误字符串应尽可能地指明它们的来源，例如产生该错误的包名前缀。例如在 image 包中，由于未知格式导致解码错误的字符串为 “image: unknown format”。
 
 Callers that care about the precise error details can use a type switch or a type assertion to look for specific errors and extract details. For PathErrors this might include examining the internal Err field for recoverable failures.
 
@@ -89,7 +89,7 @@ for try := 0; try < 2; try++ {
 ```
 The second if statement here is another [type assertion](https://go-zh.org/doc/effective_go.html#interface_conversions). If it fails, ok will be false, and e will be nil. If it succeeds, ok will be true, which means the error was of type `*os.PathError`, and then so is e, which we can examine for more information about the error.
 
-这里的第二条 if 是另一种[类型断言](https://go-zh.org/doc/effective_go.html#interface_conversions)。若它失败， ok 将为 false，而 e 则为nil. 若它成功，ok 将为 true，这意味着该错误属于 `*os.PathError` 类型，而 e 能够检测关于该错误的更多信息。
+这里的第二条 if 是另一种 [类型断言](https://go-zh.org/doc/effective_go.html#interface_conversions)。若它失败， ok 将为 false，而 e 则为 nil. 若它成功，ok 将为 true，这意味着该错误属于 `*os.PathError` 类型，而 e 能够检测关于该错误的更多信息。
 
 ## Panic
 
@@ -135,7 +135,7 @@ func CubeRoot(x float64) float64 {
 ```
 This is only an example but real library functions should avoid panic. If the problem can be masked or worked around, it's always better to let things continue to run rather than taking down the whole program. One possible counterexample is during initialization: if the library truly cannot set itself up, it might be reasonable to panic, so to speak.
 
-这仅仅是个示例，实际的库函数应避免 panic。若问题可以被屏蔽或解决， 最好就是让程序继续运行而不是终止整个程序。一个可能的反例就是初始化： 若某个库真的不能让自己工作，且有足够理由产生Panic，那就由它去吧。
+这仅仅是个示例，实际的库函数应避免 panic。若问题可以被屏蔽或解决， 最好就是让程序继续运行而不是终止整个程序。一个可能的反例就是初始化： 若某个库真的不能让自己工作，且有足够理由产生 Panic，那就由它去吧。
 
 ```go
 var user = os.Getenv("USER")
@@ -152,7 +152,7 @@ func init() {
 
 When panic is called, including implicitly for run-time errors such as indexing a slice out of bounds or failing a type assertion, it immediately stops execution of the current function and begins unwinding the stack of the goroutine, running any deferred functions along the way. If that unwinding reaches the top of the goroutine's stack, the program dies. However, it is possible to use the built-in function recover to regain control of the goroutine and resume normal execution.
 
-当 panic 被调用后（包括不明确的运行时错误，例如切片检索越界或类型断言失败）， 程序将立刻终止当前函数的执行，并开始回溯Go程的栈，运行任何被推迟的函数。 若回溯到达Go程栈的顶端，程序就会终止。不过我们可以用内建的 recover 函数来重新或来取回Go程的控制权限并使其恢复正常执行。
+当 panic 被调用后（包括不明确的运行时错误，例如切片检索越界或类型断言失败）， 程序将立刻终止当前函数的执行，并开始回溯 Go 程的栈，运行任何被推迟的函数。 若回溯到达 Go 程栈的顶端，程序就会终止。不过我们可以用内建的 recover 函数来重新或来取回 Go 程的控制权限并使其恢复正常执行。
 
 A call to recover stops the unwinding and returns the argument passed to panic. Because the only code that runs while unwinding is inside deferred functions, recover is only useful inside deferred functions.
 
@@ -160,7 +160,7 @@ A call to recover stops the unwinding and returns the argument passed to panic. 
 
 One application of recover is to shut down a failing goroutine inside a server without killing the other executing goroutines.
 
-recover 的一个应用就是在服务器中终止失败的Go程而无需杀死其它正在执行的Go程。
+recover 的一个应用就是在服务器中终止失败的 Go 程而无需杀死其它正在执行的 Go 程。
 
 ```go
 func server(workChan <-chan *Work) {
@@ -180,11 +180,11 @@ func safelyDo(work *Work) {
 ```
 In this example, if do(work) panics, the result will be logged and the goroutine will exit cleanly without disturbing the others. There's no need to do anything else in the deferred closure; calling recover handles the condition completely.
 
-在此例中，若 do(work) 触发了Panic，其结果就会被记录， 而该Go程会被干净利落地结束，不会干扰到其它Go程。我们无需在推迟的闭包中做任何事情， recover 会处理好这一切。
+在此例中，若 do(work) 触发了 Panic，其结果就会被记录， 而该 Go 程会被干净利落地结束，不会干扰到其它 Go 程。我们无需在推迟的闭包中做任何事情， recover 会处理好这一切。
 
 Because recover always returns nil unless called directly from a deferred function, deferred code can call library routines that themselves use panic and recover without failing. As an example, the deferred function in safelyDo might call a logging function before calling recover, and that logging code would run unaffected by the panicking state.
 
-由于直接从被推迟函数中调用 recover 时不会返回 nil， 因此被推迟的代码能够调用本身使用了 panic 和 recover 的库函数而不会失败。例如在 safelyDo 中，被推迟的函数可能在调用 recover 前先调用记录函数，而该记录函数应当不受Panic状态的代码的影响。
+由于直接从被推迟函数中调用 recover 时不会返回 nil， 因此被推迟的代码能够调用本身使用了 panic 和 recover 的库函数而不会失败。例如在 safelyDo 中，被推迟的函数可能在调用 recover 前先调用记录函数，而该记录函数应当不受 Panic 状态的代码的影响。
 
 With our recovery pattern in place, the do function (and anything it calls) can get out of any bad situation cleanly by calling panic. We can use that idea to simplify error handling in complex software. Let's look at an idealized version of a regexp package, which reports parsing errors by calling panic with a local error type. Here's the definition of Error, an error method, and the Compile function.
 
@@ -223,7 +223,7 @@ func (e Error) Error() string {
 	return string(e)
 }
 
-// error 是 *Regexp 的方法，它通过用一个 Error 触发Panic来报告解析错误。
+// error 是 *Regexp 的方法，它通过用一个 Error 触发 Panic 来报告解析错误。
 func (regexp *Regexp) error(err string) {
 	panic(Error(err))
 }
@@ -235,7 +235,7 @@ func Compile(str string) (regexp *Regexp, err error) {
 	defer func() {
 		if e := recover(); e != nil {
 			regexp = nil    // 清理返回值。
-			err = e.(Error) // 若它不是解析错误，将重新触发Panic。
+			err = e.(Error) // 若它不是解析错误，将重新触发 Panic。
 		}
 	}()
 	return regexp.doParse(str), nil
@@ -243,7 +243,7 @@ func Compile(str string) (regexp *Regexp, err error) {
 ```
 If doParse panics, the recovery block will set the return value to nil—deferred functions can modify named return values. It will then check, in the assignment to err, that the problem was a parse error by asserting that it has the local type Error. If it does not, the type assertion will fail, causing a run-time error that continues the stack unwinding as though nothing had interrupted it. This check means that if something unexpected happens, such as an index out of bounds, the code will fail even though we are using panic and recover to handle parse errors.
 
-若 doParse 触发了Panic，恢复块会将返回值设为 nil —被推迟的函数能够修改已命名的返回值。在 err 的赋值过程中， 我们将通过断言它是否拥有局部类型 Error 来检查它。若它没有， 类型断言将会失败，此时会产生运行时错误，并继续栈的回溯，仿佛一切从未中断过一样。 该检查意味着若发生了一些像索引越界之类的意外，那么即便我们使用了 panic 和 recover 来处理解析错误，代码仍然会失败。
+若 doParse 触发了 Panic，恢复块会将返回值设为 nil —被推迟的函数能够修改已命名的返回值。在 err 的赋值过程中， 我们将通过断言它是否拥有局部类型 Error 来检查它。若它没有， 类型断言将会失败，此时会产生运行时错误，并继续栈的回溯，仿佛一切从未中断过一样。 该检查意味着若发生了一些像索引越界之类的意外，那么即便我们使用了 panic 和 recover 来处理解析错误，代码仍然会失败。
 
 With error handling in place, the error method (because it's a method bound to a type, it's fine, even natural, for it to have the same name as the builtin error type) makes it easy to report parse errors without worrying about unwinding the parse stack by hand:
 

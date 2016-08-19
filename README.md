@@ -14,6 +14,8 @@ Go 是一门全新的语言。尽管它从既有的语言中借鉴了许多理�
 
 本文档就如何编写清晰、地道的 Go 代码提供了一些技巧。它是对 [语言规范](https://go-zh.org/ref/spec)、 [Go 语言之旅](https://tour.golang.org/) 以及 [如何使用 Go 编程](https://go-zh.org/doc/code.html) 的补充说明，因此我们建议您先阅读这些文档。
 
+---
+
 `Effective Go` 作为 `GO` 语言的入门必读教程，值得每位初学者好好阅读一遍，编辑成书，方便阅读交流。
 
 ---

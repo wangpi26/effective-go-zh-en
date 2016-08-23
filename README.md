@@ -68,5 +68,12 @@ Go 是一门全新的语言。尽管它从既有的语言中借鉴了许多理�
 
 + 请顺手点一下 `STAT` ，或者留言讨论，这是对我最大的鼓励！
 
+### 下载
+
+为了让大家更方便阅读，在此提供 [网易蜂巢对象存储](https://c.163.com/dashboard#/m/nos/) 的下载地址：
+
+- [x] [PDF格式](http://bingohuang.nos-eastchina1.126.net/effective-go-zh-en-gitbook.pdf)
+- [x] [EPUB格式](http://bingohuang.nos-eastchina1.126.net/effective-go-zh-en-gitbook.epub)
+
 ## License
 除特别注明外， 本页内容均采用知识共享 - 署名（CC-BY）3.0 协议授权，代码采用 [BSD 协议](LICENSE) 授权。

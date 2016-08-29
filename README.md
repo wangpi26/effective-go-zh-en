@@ -66,7 +66,7 @@ Go 是一门全新的语言。尽管它从既有的语言中借鉴了许多理�
 
 + **[Fork on GitHub](https://github.com/bingoHuang/effective-go-zh-en)**
 
-+ 请顺手点一下 `STAT` ，或者留言讨论，这是对我最大的鼓励！
++ 请顺手点一下 `STAR` ，或者留言讨论，这是对我最大的鼓励！
 
 ### 下载
 

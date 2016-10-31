@@ -3,7 +3,7 @@
 
 Although it doesn't look superficially very different from initialization in C or C++, initialization in Go is more powerful. Complex structures can be built during initialization and the ordering issues among initialized objects, even among different packages, are handled correctly.
 
-尽管从表面上看，Go 的初始化过程与 C 或 C++ 并不算太大，但它确实更为强大。 在初始化过程中，不仅可以构建复杂的结构，还能正确处理不同包对象间的初始化顺序。
+尽管从表面上看，Go 的初始化过程与 C 或 C++ 相比并无太大差别，但它确实更为强大。 在初始化过程中，不仅可以构建复杂的结构，还能正确处理不同包对象间的初始化顺序。
 
 ### Constants
 

@@ -62,7 +62,7 @@ func (b ByteSize) String() string {
 ```
 The expression YB prints as 1.00YB, while ByteSize(1e13) prints as 9.09TB.
 
-表达式 YB 会打印出 1.00YB，而 ByteSize(1e13) 则会打印出 9.09。
+表达式 YB 会打印出 1.00YB，而 ByteSize(1e13) 则会打印出 9.09TB。
 
 The use here of Sprintf to implement ByteSize's String method is safe (avoids recurring indefinitely) not because of a conversion but because it calls Sprintf with %f, which is not a string format: Sprintf will only call the String method when it wants a string, and %f wants a floating-point value.
 

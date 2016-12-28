@@ -32,7 +32,7 @@ One way to think about this model is to consider a typical single-threaded progr
 
 They're called goroutines because the existing terms—threads, coroutines, processes, and so on—convey inaccurate connotations. A goroutine has a simple model: it is a function executing concurrently with other goroutines in the same address space. It is lightweight, costing little more than the allocation of stack space. And the stacks start small, so they are cheap, and grow by allocating (and freeing) heap storage as required.
 
-我们称之为 **Go 程 ** 是因为现有的术语—线程、协程、进程等等—无法准确传达它的含义。 Go 程具有简单的模型：它是与其它 Go 程并发运行在同一地址空间的函数。它是轻量级的， 所有小号几乎就只有栈空间的分配。而且栈最开始是非常小的，所以它们很廉价， 仅在需要时才会随着堆空间的分配（和释放）而变化。
+我们称之为 ** Go 程 ** ，是因为现有的术语—线程、协程、进程等等—无法准确传达它的含义。 Go 程具有简单的模型：它是与其它 Go 程并发运行在同一地址空间的函数。它是轻量级的， 所有消耗几乎就只有栈空间的分配。而且栈最开始是非常小的，所以它们很廉价， 仅在需要时才会随着堆空间的分配（和释放）而变化。
 
 Goroutines are multiplexed onto multiple OS threads so if one should block, such as while waiting for I/O, others continue to run. Their design hides many of the complexities of thread creation and management.
 

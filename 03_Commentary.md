@@ -67,7 +67,7 @@ If the package is simple, the package comment can be brief.
 // manipulating slash-separated filename paths.
 ```
 ```go
-// path 包实现了一些常用的工具，以便于操作用反斜杠分隔的路径.
+// path 包实现了一些常用的工具，以便于操作用正斜杠分隔的路径.
 ```
 Comments do not need extra formatting such as banners of stars. The generated output may not even be presented in a fixed-width font, so don't depend on spacing for alignment—godoc, like gofmt, takes care of that. The comments are uninterpreted plain text, so HTML and other annotations such as `_this_` will reproduce _verbatim_ and should not be used. One adjustment godoc does do is to display indented text in a fixed-width font, suitable for program snippets. The package comment for the [fmt package](https://go-zh.org/pkg/fmt/) uses this to good effect.
 

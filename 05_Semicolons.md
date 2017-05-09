@@ -19,7 +19,7 @@ the lexer always inserts a semicolon after the token. This could be summarized a
 
 A semicolon can also be omitted immediately before a closing brace, so a statement such as
 
-分号也可在闭括号之前直接省略，因此像
+分号也可在闭合的大括号之前直接省略，因此像
 
 ```go
 	go func() { for { dst <- <-src } }()

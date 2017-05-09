@@ -66,4 +66,4 @@ There are a number of such names and it's productive to honor them and the funct
 
 Finally, the convention in Go is to use MixedCaps or mixedCaps rather than underscores to write multiword names.
 
-最后，Go 中约定使用驼峰记法 MixedCaps 或 mixedCaps。
+最后，Go 中约定使用驼峰记法 MixedCaps 或 mixedCaps 而非下划线的方式来对多单词名称进行命名。

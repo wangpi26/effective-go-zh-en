@@ -16,7 +16,7 @@ Since the memory returned by new is zeroed, it's helpful to arrange when designi
 
 The zero-value-is-useful property works transitively. Consider this type declaration.
 
-“零值属性” 可以带来各种好处。考虑以下类型声明。
+“零值属性” 是传递性的。考虑以下类型声明。
 
 ```go
 type SyncedBuffer struct {

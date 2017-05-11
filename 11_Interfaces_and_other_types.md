@@ -274,7 +274,7 @@ http.Handle("/counter", ctr)
 ```
 But why make Counter a struct? An integer is all that's needed. (The receiver needs to be a pointer so the increment is visible to the caller.)
 
-但为什么 Counter 要是结构体呢？一个整数就够了。 An integer is all that's needed. （接收者必须为指针，增量操作对于调用者才可见。）
+但为什么 Counter 要是结构体呢？一个整数就够了。（接收者必须为指针，增量操作对于调用者才可见。）
 
 ```go
 // Simpler counter server.

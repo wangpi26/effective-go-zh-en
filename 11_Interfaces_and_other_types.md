@@ -163,7 +163,7 @@ If the type assertion fails, str will still exist and be of type string, but it 
 
 As an illustration of the capability, here's an if-else statement that's equivalent to the type switch that opened this section.
 
-作为对能量的说明，这里有个 if-else 语句，它等价于本节开头的类型选择。
+作为对这种能力的说明，这里有个 if-else 语句，它等价于本节开头的类型选择。
 
 ```go
 if str, ok := value.(string); ok {

@@ -126,7 +126,7 @@ As we saw in the discussion of [interfaces](https://go-zh.org/doc/effective_go.h
 
 Some interface checks do happen at run-time, though. One instance is in the [encoding/json](https://go-zh.org/pkg/encoding/json/) package, which defines a [Marshaler](Marshaler) interface. When the JSON encoder receives a value that implements that interface, the encoder invokes the value's marshaling method to convert it to JSON instead of doing the standard conversion. The encoder checks this property at run time with a [type assertion](https://go-zh.org/doc/effective_go.html#interface_conversions) like:
 
-尽管有些接口检查会在运行时进行。[encoding/json](https://go-zh.org/pkg/encoding/json/) 包中就有个实例它定义了一个 [Marshaler](Marshaler) 接口。当 JSON 编码器接收到一个实现了该接口的值，那么该编码器就会调用该值的编组方法， 将其转换为 JSON，而非进行标准的类型转换。 编码器在运行时通过 [类型断言](https://go-zh.org/doc/effective_go.html#interface_conversions) 检查其属性，就像这样：
+尽管如此，有些接口检查会在运行时进行。[encoding/json](https://go-zh.org/pkg/encoding/json/) 包中就有个实例它定义了一个 [Marshaler](Marshaler) 接口。当 JSON 编码器接收到一个实现了该接口的值，那么该编码器就会调用该值的编组方法， 将其转换为 JSON，而非进行标准的类型转换。 编码器在运行时通过 [类型断言](https://go-zh.org/doc/effective_go.html#interface_conversions) 检查其属性，就像这样：
 
 ```go
 m, ok := val.(json.Marshaler)

@@ -17,7 +17,7 @@ type error interface {
 ```
 A library writer is free to implement this interface with a richer model under the covers, making it possible not only to see the error but also to provide some context. As mentioned, alongside the usual `*os.File` return value, os.Open also returns an error value. If the file is opened successfully, the error will be nil, but when there is a problem, it will hold an os.PathError:
 
-库的编写者通过更丰富的底层模型可以轻松实现这个接口，这样不仅能看见错误， 还能提供一些上下文。例如，os.Open 可返回一个 os.PathError。
+库的编写者通过更丰富的底层模型可以轻松实现这个接口，这样不仅能看见错误，还能提供一些上下文。前已述及，除了通常的 `*os.File` 返回值， os.Open 还返回一个 error 值。若该文件被成功打开， error 值就是 nil ，而如果出了问题，该值就是一个 os.PathError。
 
 ```go
 // PathError records an error and the operation and

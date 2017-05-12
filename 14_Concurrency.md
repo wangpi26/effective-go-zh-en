@@ -333,6 +333,8 @@ fmt.Printf("answer: %d\n", <-request.resultChan)
 ```
 On the server side, the handler function is the only thing that changes.
 
+在服务端，只需改动 handler 函数。
+
 ```go
 func handle(queue chan *Request) {
 	for req := range queue {

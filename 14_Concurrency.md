@@ -164,7 +164,7 @@ func Serve(queue chan *Request) {
 ```
 Once MaxOutstanding handlers are executing process, any more will block trying to send into the filled channel buffer, until one of the existing handlers finishes and receives from the buffer.
 
-由于数据同步发生在信道的接收端（也就是说发送发生在 > 接受之前，参见 [Go 内存模型](https://go-zh.org/ref/mem)），因此信号必须在信道的接收端获取，而非发送端。
+一旦有 MaxOutstanding 个处理器进入运行状态，其他的所有处理器都会在试图发送值到信道缓冲区的时候阻塞，直到某个处理器完成处理并从缓冲区取回一个值为止。
 
 This design has a problem, though: Serve creates a new goroutine for every incoming request, even though only MaxOutstanding of them can run at any moment. As a result, the program can consume unlimited resources if the requests come in too fast. We can address that deficiency by changing Serve to gate the creation of the goroutines. Here's an obvious solution, but beware it has a bug we'll fix subsequently:
 

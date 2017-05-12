@@ -4,7 +4,7 @@
 
 Go does not provide the typical, type-driven notion of subclassing, but it does have the ability to “borrow” pieces of an implementation by embedding types within a struct or interface.
 
-Go 并不提供典型的，类型驱动的子类化概念，但通过将类型 <内嵌到结构体或接口中， 它就能 “借鉴” 部分实现。
+Go 并不提供典型的，类型驱动的子类化概念，但通过将类型内嵌到结构体或接口中， 它就能 “借鉴” 部分实现。
 
 Interface embedding is very simple. We've mentioned the io.Reader and io.Writer interfaces before; here are their definitions.
 

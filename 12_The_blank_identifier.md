@@ -6,9 +6,9 @@ We've mentioned the blank identifier a couple of times now, in the context of fo
 
 我们在 [for-range](https://go-zh.org/doc/effective_go.html#for) 循环和 [映射](https://go-zh.org/doc/effective_go.html#maps) 中提过几次空白标识符。 空白标识符可被赋予或声明为任何类型的任何值，而其值会被无害地丢弃。它有点像 Unix 中的 /dev/null 文件：它表示只写的值，在需要变量但不需要实际值的地方用作占位符。 我们在前面已经见过它的用法了。
 
-The blank identifier in multiple assignment
+### The blank identifier in multiple assignment
 
-多重赋值中的空白标识符
+### 多重赋值中的空白标识符
 
 The use of a blank identifier in a for range loop is a special case of a general situation: multiple assignment.
 

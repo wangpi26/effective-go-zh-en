@@ -12,7 +12,7 @@ We've mentioned the blank identifier a couple of times now, in the context of fo
 
 The use of a blank identifier in a for range loop is a special case of a general situation: multiple assignment.
 
-for range 循环中对空表标识符的用法是一种具体情况，更一般的情况即为多重赋值。
+for range 循环中对空白标识符的用法是一种具体情况，更一般的情况即为多重赋值。
 
 If an assignment requires multiple values on the left side, but one of the values will not be used by the program, a blank identifier on the left-hand-side of the assignment avoids the need to create a dummy variable and makes it clear that the value is to be discarded. For instance, when calling a function that returns a value and an error, but only the error is important, use the blank identifier to discard the irrelevant value.
 

@@ -63,7 +63,7 @@ type ReadWriter struct {
 ```
 The embedded elements are pointers to structs and of course must be initialized to point to valid structs before they can be used. The ReadWriter struct could be written as
 
-内嵌的元素为指向结构体的指针，当然它们在使用前必须被初始化为指向有效结构体的指针。 ReadWriter 结构体和通过如下方式定义：
+内嵌的元素为指向结构体的指针，当然它们在使用前必须被初始化为指向有效结构体的指针。 ReadWriter 结构体可通过如下方式定义：
 
 ```go
 type ReadWriter struct {

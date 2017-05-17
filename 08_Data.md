@@ -16,7 +16,7 @@ Since the memory returned by new is zeroed, it's helpful to arrange when designi
 
 The zero-value-is-useful property works transitively. Consider this type declaration.
 
-“零值属性” 可以带来各种好处。考虑以下类型声明。
+“零值属性” 是传递性的。考虑以下类型声明。
 
 ```go
 type SyncedBuffer struct {
@@ -570,7 +570,7 @@ to print in the format
 
 Our String method is able to call Sprintf because the print routines are fully reentrant and can be wrapped this way. There is one important detail to understand about this approach, however: don't construct a String method by calling Sprintf in a way that will recur into your String method indefinitely. This can happen if the Sprintf call attempts to print the receiver directly as a string, which in turn will invoke the method again. It's a common and easy mistake to make, as this example shows.
 
-我们的 String 方法也可调用 Sprintf， 因为打印例程可以完全重入并按这种方式封装。不过要理解这种方式，还有一个重要的细节： 请勿通过调用 Sprintf 来构造 String 方法，因为它会无限递归你的的 String 方法。
+我们的 String 方法也可调用 Sprintf， 因为打印例程可以完全重入并按这种方式封装。不过要理解这种方式，还有一个重要的细节： 请勿通过调用 Sprintf 来构造 String 方法，因为它会无限递归你的的 String 方法。当 Sprintf 试图将一个接收者以字符串形式打印输出，而在此过程中反过来又调用了 Sprintf 时，这种情况就会出现。这是一个很常见的错误，如下例所示。
 
 ```go
 type MyString string
@@ -678,6 +678,7 @@ func append(slice []T, elements ...T) []T
 where T is a placeholder for any given type. You can't actually write a function in Go where the type T is determined by the caller. That's why append is built in: it needs support from the compiler.
 
 其中的 T 为任意给定类型的占位符。实际上，你无法在 Go 中编写一个类型 T 由调用者决定的函数。这也就是为何 append 为内建函数的原因：它需要编译器的支持。
+
 What append does is append the elements to the end of the slice and return the result. The result needs to be returned because, as with our hand-written Append, the underlying array may change. This simple example
 
 append 会在切片末尾追加元素并返回结果。我们必须返回结果， 原因与我们手写的 Append 一样，即底层数组可能会被改变。以下简单的例子

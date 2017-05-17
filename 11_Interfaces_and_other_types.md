@@ -163,7 +163,7 @@ If the type assertion fails, str will still exist and be of type string, but it 
 
 As an illustration of the capability, here's an if-else statement that's equivalent to the type switch that opened this section.
 
-作为对能量的说明，这里有个 if-else 语句，它等价于本节开头的类型选择。
+作为对这种能力的说明，这里有个 if-else 语句，它等价于本节开头的类型选择。
 
 ```go
 if str, ok := value.(string); ok {
@@ -274,7 +274,7 @@ http.Handle("/counter", ctr)
 ```
 But why make Counter a struct? An integer is all that's needed. (The receiver needs to be a pointer so the increment is visible to the caller.)
 
-但为什么 Counter 要是结构体呢？一个整数就够了。 An integer is all that's needed. （接收者必须为指针，增量操作对于调用者才可见。）
+但为什么 Counter 要是结构体呢？一个整数就够了。（接收者必须为指针，增量操作对于调用者才可见。）
 
 ```go
 // Simpler counter server.
@@ -386,4 +386,4 @@ When someone visits the page /args, the handler installed at that page has value
 
 In this section we have made an HTTP server from a struct, an integer, a channel, and a function, all because interfaces are just sets of methods, which can be defined for (almost) any type.
 
-在本节中，我们通过一个结构体，一个整数，一个信道和一个函数，建立了一个 HTTP 服务器， 这一切都是因为接口只是方法的集和，而几乎任何类型都能定义方法。
+在本节中，我们通过一个结构体，一个整数，一个信道和一个函数，建立了一个 HTTP 服务器， 这一切都是因为接口只是方法的集合，而几乎任何类型都能定义方法。

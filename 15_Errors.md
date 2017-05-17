@@ -4,9 +4,11 @@
 
 Library routines must often return some sort of error indication to the caller. As mentioned earlier, Go's multivalue return makes it easy to return a detailed error description alongside the normal return value. It is good style to use this feature to provide detailed error information. For example, as we'll see, os.Open doesn't just return a nil pointer on failure, it also returns an error value that describes what went wrong.
 
+库例程通常需要向调用者返回某种类型的错误提示。之前提到过，Go 语言的多值返回特性， 使得它在返回常规的值时，还能轻松地返回详细的错误描述。使用这个特性来提供详细的错误信息是一种良好的风格。 例如，我们稍后会看到， os.Open 在失败时不仅返回一个 nil 指针，还返回一个详细描述错误的 error 值。
+
 By convention, errors have type error, a simple built-in interface.
 
-库例程通常需要向调用者返回某种类型的错误提示。之前提到过，Go 语言的多值返回特性， 使得它在返回常规的值时，还能轻松地返回详细的错误描述。按照约定，错误的类型通常为 error，这是一个内建的简单接口。
+按照约定，错误的类型通常为 error，这是一个内建的简单接口。
 
 ```go
 type error interface {
@@ -15,7 +17,7 @@ type error interface {
 ```
 A library writer is free to implement this interface with a richer model under the covers, making it possible not only to see the error but also to provide some context. As mentioned, alongside the usual `*os.File` return value, os.Open also returns an error value. If the file is opened successfully, the error will be nil, but when there is a problem, it will hold an os.PathError:
 
-库的编写者通过更丰富的底层模型可以轻松实现这个接口，这样不仅能看见错误， 还能提供一些上下文。例如，os.Open 可返回一个 os.PathError。
+库的编写者通过更丰富的底层模型可以轻松实现这个接口，这样不仅能看见错误，还能提供一些上下文。前已述及，除了通常的 `*os.File` 返回值， os.Open 还返回一个 error 值。若该文件被成功打开， error 值就是 nil ，而如果出了问题，该值就是一个 os.PathError。
 
 ```go
 // PathError records an error and the operation and
@@ -51,7 +53,7 @@ open /etc/passwx: no such file or directory
 ```
 Such an error, which includes the problematic file name, the operation, and the operating system error it triggered, is useful even if printed far from the call that caused it; it is much more informative than the plain "no such file or directory".
 
-这种错误包含了出错的文件名、操作和触发的操作系统错误，即便在产生该错误的调用 和输出的错误信息相距甚远时，它也会非常有用，这比苍白的 “不存在该文件或目录” 更具说明性。
+这种错误包含了出错的文件名、操作和触发的操作系统错误，即便在产生该错误的调用和输出的错误信息相距甚远时，它也会非常有用，这比苍白的 “不存在该文件或目录” 更具说明性。
 
 When feasible, error strings should identify their origin, such as by having a prefix naming the operation or package that generated the error. For example, in package image, the string representation for a decoding error due to an unknown format is "image: unknown format".
 
@@ -152,7 +154,7 @@ func init() {
 
 When panic is called, including implicitly for run-time errors such as indexing a slice out of bounds or failing a type assertion, it immediately stops execution of the current function and begins unwinding the stack of the goroutine, running any deferred functions along the way. If that unwinding reaches the top of the goroutine's stack, the program dies. However, it is possible to use the built-in function recover to regain control of the goroutine and resume normal execution.
 
-当 panic 被调用后（包括不明确的运行时错误，例如切片检索越界或类型断言失败）， 程序将立刻终止当前函数的执行，并开始回溯 Go 程的栈，运行任何被推迟的函数。 若回溯到达 Go 程栈的顶端，程序就会终止。不过我们可以用内建的 recover 函数来重新或来取回 Go 程的控制权限并使其恢复正常执行。
+当 panic 被调用后（包括不明确的运行时错误，例如切片检索越界或类型断言失败）， 程序将立刻终止当前函数的执行，并开始回溯 Go 程的栈，运行任何被推迟的函数。 若回溯到达 Go 程栈的顶端，程序就会终止。不过我们可以用内建的 recover 函数来重新取回 Go 程的控制权限并使其恢复正常执行。
 
 A call to recover stops the unwinding and returns the argument passed to panic. Because the only code that runs while unwinding is inside deferred functions, recover is only useful inside deferred functions.
 

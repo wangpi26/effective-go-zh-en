@@ -4,7 +4,7 @@
 
 Go does not provide the typical, type-driven notion of subclassing, but it does have the ability to “borrow” pieces of an implementation by embedding types within a struct or interface.
 
-Go 并不提供典型的，类型驱动的子类化概念，但通过将类型 <内嵌到结构体或接口中， 它就能 “借鉴” 部分实现。
+Go 并不提供典型的，类型驱动的子类化概念，但通过将类型内嵌到结构体或接口中， 它就能 “借鉴” 部分实现。
 
 Interface embedding is very simple. We've mentioned the io.Reader and io.Writer interfaces before; here are their definitions.
 
@@ -43,7 +43,7 @@ This says just what it looks like: A ReadWriter can do what a Reader does and wh
 
 The same basic idea applies to structs, but with more far-reaching implications. The bufio package has two struct types, bufio.Reader and bufio.Writer, each of which of course implements the analogous interfaces from package io. And bufio also implements a buffered reader/writer, which it does by combining a reader and a writer into one struct using embedding: it lists the types within the struct but does not give them field names.
 
-同样的基本想法可以应用在结构体中，但其意义更加深远。bufio 包中有 bufio.Reader 和 bufio.Writer 这两个结构体类型， 它们每一个都实现了与 io 包中相同意义的接口。此外，bufio 还通过结合 reader/writer 并将其内嵌到结构体中，实现了带缓冲的 reader/writer：它列出了结构体中的类型，但并未给予它们字段名。
+同样的基本想法可以应用在结构体中，但其意义更加深远。bufio 包中有 bufio.Reader 和 bufio.Writer 这两个结构体类型， 它们每一个都实现了与 io 包中相同意义的接口。此外，bufio 还通过结合 reader/writer 并将其内嵌到结构体中，实现了带缓冲的 reader/writer：它在结构体中列出了这些类型，但并未给予它们字段名。
 
 ```go
 // ReadWriter stores pointers to a Reader and a Writer.
@@ -63,7 +63,7 @@ type ReadWriter struct {
 ```
 The embedded elements are pointers to structs and of course must be initialized to point to valid structs before they can be used. The ReadWriter struct could be written as
 
-内嵌的元素为指向结构体的指针，当然它们在使用前必须被初始化为指向有效结构体的指针。 ReadWriter 结构体和通过如下方式定义：
+内嵌的元素为指向结构体的指针，当然它们在使用前必须被初始化为指向有效结构体的指针。 ReadWriter 结构体可通过如下方式定义：
 
 ```go
 type ReadWriter struct {

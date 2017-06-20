@@ -154,7 +154,7 @@ func init() {
 
 When panic is called, including implicitly for run-time errors such as indexing a slice out of bounds or failing a type assertion, it immediately stops execution of the current function and begins unwinding the stack of the goroutine, running any deferred functions along the way. If that unwinding reaches the top of the goroutine's stack, the program dies. However, it is possible to use the built-in function recover to regain control of the goroutine and resume normal execution.
 
-当 panic 被调用后（包括不明确的运行时错误，例如切片检索越界或类型断言失败）， 程序将立刻终止当前函数的执行，并开始回溯 Go 程的栈，运行任何被推迟的函数。 若回溯到达 Go 程栈的顶端，程序就会终止。不过我们可以用内建的 recover 函数来重新取回 Go 程的控制权限并使其恢复正常执行。
+当 panic 被调用后（包括不明确的运行时错误，例如切片检索越界或类型断言失败）， 程序将立刻终止当前函数的执行，并开始回溯 goroutine 的栈，运行任何被推迟的函数。 若回溯到达 goroutine 栈的顶端，程序就会终止。不过我们可以用内建的 recover 函数来重新取回 goroutine 的控制权限并使其恢复正常执行。
 
 A call to recover stops the unwinding and returns the argument passed to panic. Because the only code that runs while unwinding is inside deferred functions, recover is only useful inside deferred functions.
 
@@ -162,7 +162,7 @@ A call to recover stops the unwinding and returns the argument passed to panic. 
 
 One application of recover is to shut down a failing goroutine inside a server without killing the other executing goroutines.
 
-recover 的一个应用就是在服务器中终止失败的 Go 程而无需杀死其它正在执行的 Go 程。
+recover 的一个应用就是在服务器中终止失败的 goroutine 而无需杀死其它正在执行的 goroutine。
 
 ```go
 func server(workChan <-chan *Work) {
@@ -182,7 +182,7 @@ func safelyDo(work *Work) {
 ```
 In this example, if do(work) panics, the result will be logged and the goroutine will exit cleanly without disturbing the others. There's no need to do anything else in the deferred closure; calling recover handles the condition completely.
 
-在此例中，若 do(work) 触发了 Panic，其结果就会被记录， 而该 Go 程会被干净利落地结束，不会干扰到其它 Go 程。我们无需在推迟的闭包中做任何事情， recover 会处理好这一切。
+在此例中，若 do(work) 触发了 Panic，其结果就会被记录， 而该 Go 程会被干净利落地结束，不会干扰到其它 goroutine。我们无需在推迟的闭包中做任何事情， recover 会处理好这一切。
 
 Because recover always returns nil unless called directly from a deferred function, deferred code can call library routines that themselves use panic and recover without failing. As an example, the deferred function in safelyDo might call a logging function before calling recover, and that logging code would run unaffected by the panicking state.
 

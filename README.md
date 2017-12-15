@@ -1,5 +1,5 @@
-《Effective Go》中英双语版
-===
+# 《Effective Go》中英双语版
+
 ## *Effective Go* - 《实效 GO 编程》
 
 ### Introduction
@@ -19,7 +19,8 @@ Go 是一门全新的语言。尽管它从既有的语言中借鉴了许多理�
 `Effective Go` 作为 `Go` 语言的入门必读教程，值得每位初学者好好阅读一遍，编辑成书，方便阅读交流。
 
 ---
-## 当前完成章节（全部完成）：
+
+## 章节
 
 1. [前言](README.md)
 2. [引言](01_Overview.md)
@@ -39,10 +40,9 @@ Go 是一门全新的语言。尽管它从既有的语言中借鉴了许多理�
 16. [错误](15_Errors.md)
 17. [一个 Web 服务器](16_A_web_server.md)
 
-
 > 改版说明：@2016.8.6 by bingoHuang, revision to Chinese & English version.
 
-> 李笑来在他的新书 [《人人都是工程师》](http://lixiaolai.com/2016/06/12/makecs-preface/) 中说过一句话： 在中国，对绝大多数人来说，**`English + Computer Skills = Freedom`（英语 + 计算机技能 = 自由）**
+> 李笑来在他的新书 [《人人都是工程师》](http://lixiaolai.com/2016/06/12/makecs-preface/) 中说过一句话：在中国，对绝大多数人来说，**`English + Computer Skills = Freedom`（英语 + 计算机技能 = 自由）**
 
 > 我非常的赞同。英语和计算机技能是相辅相成，学习好一门编程语言（如 `Go`）的同时，还能加强英语学习，何乐而不为。所以我决定将本书改版成中英双语版，方便更多的人来学习阅读。
 
@@ -62,18 +62,17 @@ Go 是一门全新的语言。尽管它从既有的语言中借鉴了许多理�
 
 ### Read, Fork and Star
 
-+ **[Read on Gitbook](https://www.gitbook.com/book/bingohuang/effective-go-zh-en/details)**
-
++ **[Read on GitBook](https://www.gitbook.com/book/bingohuang/effective-go-zh-en/details)**
 + **[Fork on GitHub](https://github.com/bingoHuang/effective-go-zh-en)**
-
 + 请顺手点一下 `STAR` ，或者留言讨论，这是对我最大的鼓励！
 
 ### 下载
 
 为了让大家更方便阅读，在此提供 [网易蜂巢对象存储](https://c.163.com/dashboard#/m/nos/) 的下载地址：
 
-- [x] [PDF格式](http://bingohuang.nos-eastchina1.126.net/effective-go-zh-en-gitbook.pdf)
-- [x] [EPUB格式](http://bingohuang.nos-eastchina1.126.net/effective-go-zh-en-gitbook.epub)
+- [PDF 格式](http://bingohuang.nos-eastchina1.126.net/effective-go-zh-en-gitbook.pdf)
+- [EPUB 格式](http://bingohuang.nos-eastchina1.126.net/effective-go-zh-en-gitbook.epub)
 
 ## License
+
 除特别注明外， 本页内容均采用知识共享 - 署名（CC-BY）3.0 协议授权，代码采用 [BSD 协议](LICENSE) 授权。

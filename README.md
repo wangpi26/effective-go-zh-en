@@ -42,7 +42,7 @@ Go 是一门全新的语言。尽管它从既有的语言中借鉴了许多理�
 
 > 改版说明：@2016.8.6 by bingoHuang, revision to Chinese & English version.
 
-> 李笑来在他的新书 [《人人都是工程师》](http://xiaolai.li/2016/06/12/makecs-preface/) 中说过一句话： 在中国，对绝大多数人来说，**`English + Computer Skills = Freedom`（英语 + 计算机技能 = 自由）**
+> 李笑来在他的新书 [《人人都是工程师》](http://lixiaolai.com/2016/06/12/makecs-preface/) 中说过一句话： 在中国，对绝大多数人来说，**`English + Computer Skills = Freedom`（英语 + 计算机技能 = 自由）**
 
 > 我非常的赞同。英语和计算机技能是相辅相成，学习好一门编程语言（如 `Go`）的同时，还能加强英语学习，何乐而不为。所以我决定将本书改版成中英双语版，方便更多的人来学习阅读。
 
@@ -50,7 +50,7 @@ Go 是一门全新的语言。尽管它从既有的语言中借鉴了许多理�
 
 > 感谢 [hellogcc](http://www.hellogcc.org) 提供的 [中文翻译版一](http://www.hellogcc.org/effective_go.html)，这是我之前制作中文版电子书所参考的资料，翻译的很用心。
 
-> 要更感谢 [Go 语言中文社区](https://go-zh.org/) 提供的 [中文翻译版二](https://go-zh.org/doc/effective_go.htm)，此翻译更贴切有味道，不可多得。本人已和 [Go-zh 项目组](https://github.com/Go-zh/go) 沟通过，获取了该社区的授权，故将此作为双语版的中文版本。
+> 要更感谢 [Go 语言中文社区](https://go-zh.org/) 提供的 [中文翻译版二](https://go-zh.org/doc/effective_go.html)，此翻译更贴切有味道，不可多得。本人已和 [Go-zh 项目组](https://github.com/Go-zh/go) 沟通过，获取了该社区的授权，故将此作为双语版的中文版本。
 
 ### 参考
 
@@ -58,7 +58,7 @@ Go 是一门全新的语言。尽管它从既有的语言中借鉴了许多理�
 
 ~~*参考中文翻译版一：[Effective Go 中文版](http://www.hellogcc.org/effective_go.html)*~~
 
-*参考中文翻译版二：[Effective Go 中文版](https://go-zh.org/doc/effective_go.htm)*
+*参考中文翻译版二：[Effective Go 中文版](https://go-zh.org/doc/effective_go.html)*
 
 ### Read, Fork and Star
 

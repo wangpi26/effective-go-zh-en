@@ -136,7 +136,7 @@ Deferring a call to a function such as Close has two advantages. First, it guara
 
 The arguments to the deferred function (which include the receiver if the function is a method) are evaluated when the defer executes, not when the call executes. Besides avoiding worries about variables changing values as the function executes, this means that a single deferred call site can defer multiple function executions. Here's a silly example.
 
-被推迟函数的实参（如果该函数为方法则还包括接收者）在推迟执行时就会求值， 而不是在调用执行时才求值。这样不仅无需担心变量值在函数执行时被改变， 同时还意味着单个已推迟的调用可推迟多个函数的执行。下面是个简单的例子。
+被推迟函数的实参（如果该函数为方法则还包括接收者）在推迟执行时就会被求值， 而不是在调用执行时才求值。这样不仅无需担心变量值在函数执行时被改变， 同时还意味着单个被推迟的调用可推迟多个函数的执行。下面是个简单的例子。
 
 ```go
 for i := 0; i < 5; i++ {
@@ -171,7 +171,7 @@ func a() {
 ```
 We can do better by exploiting the fact that arguments to deferred functions are evaluated when the defer executes. The tracing routine can set up the argument to the untracing routine. This example:
 
-我们可以充分利用这个特点，即被推迟函数的实参在 defer 执行时才会被求值。 跟踪例程可针对反跟踪例程设置实参。以下例子：
+我们可以充分利用这个特点，即被推迟函数的实参在 defer 执行时就会被求值。 跟踪例程可针对反跟踪例程设置实参。以下例子：
 
 ```go
 func trace(s string) string {

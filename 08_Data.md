@@ -34,7 +34,7 @@ var v SyncedBuffer      // type  SyncedBuffer
 ```
 ### Constructors and composite literals
 
-### 构造函数与复合字面
+### 构造函数与复合字面量
 
 Sometimes the zero value isn't good enough and an initializing constructor is necessary, as in this example derived from package os.
 
@@ -55,7 +55,7 @@ func NewFile(fd int, name string) *File {
 ```
 There's a lot of boiler plate in there. We can simplify it using a composite literal, which is an expression that creates a new instance each time it is evaluated.
 
-这里显得代码过于冗长。我们可通过复合字面来简化它， 该表达式在每次求值时都会创建新的实例。
+这里显得代码过于冗长。我们可通过复合字面量来简化它， 该表达式在每次求值时都会创建新的实例。
 
 ```go
 func NewFile(fd int, name string) *File {
@@ -68,25 +68,25 @@ func NewFile(fd int, name string) *File {
 ```
 Note that, unlike in C, it's perfectly OK to return the address of a local variable; the storage associated with the variable survives after the function returns. In fact, taking the address of a composite literal allocates a fresh instance each time it is evaluated, so we can combine these last two lines.
 
-请注意，返回一个局部变量的地址完全没有问题，这点与 C 不同。该局部变量对应的数据 在函数返回后依然有效。实际上，每当获取一个复合字面的地址时，都将为一个新的实例分配内存， 因此我们可以将上面的最后两行代码合并：
+请注意，返回一个局部变量的地址完全没有问题，这点与 C 不同。该局部变量对应的数据 在函数返回后依然有效。实际上，每当获取一个复合字面量的地址时，都将为一个新的实例分配内存， 因此我们可以将上面的最后两行代码合并：
 
 ```go
 	return &File{fd, name, nil, 0}
 ```
 The fields of a composite literal are laid out in order and must all be present. However, by labeling the elements explicitly as field:value pairs, the initializers can appear in any order, with the missing ones left as their respective zero values. Thus we could say
 
-复合字面的字段必须按顺序全部列出。但如果以 字段: 值 对的形式明确地标出元素，初始化字段时就可以按任何顺序出现，未给出的字段值将赋予零值。 因此，我们可以用如下形式：
+复合字面量的字段必须按顺序全部列出。但如果以 字段: 值 对的形式明确地标出元素，初始化字段时就可以按任何顺序出现，未给出的字段值将赋予零值。 因此，我们可以用如下形式：
 
 ```go
 	return &File{fd: fd, name: name}
 ```
 As a limiting case, if a composite literal contains no fields at all, it creates a zero value for the type. The expressions new(File) and &File{} are equivalent.
 
-少数情况下，若复合字面不包括任何字段，它将创建该类型的零值。表达式 new(File) 和 &File{} 是等价的。
+少数情况下，若复合字面量不包括任何字段，它将创建该类型的零值。表达式 new(File) 和 &File{} 是等价的。
 
 Composite literals can also be created for arrays, slices, and maps, with the field labels being indices or map keys as appropriate. In these examples, the initializations work regardless of the values of Enone, Eio, and Einval, as long as they are distinct.
 
-复合字面同样可用于创建数组、切片以及映射，字段标签是索引还是映射键则视情况而定。 在下例初始化过程中，无论 Enone、Eio 和 Einval 的值是什么，只要它们的标签不同就行。
+复合字面量同样可用于创建数组、切片以及映射，字段标签是索引还是映射键则视情况而定。 在下例初始化过程中，无论 Enone、Eio 和 Einval 的值是什么，只要它们的标签不同就行。
 
 ```go
 a := [...]string   {Enone: "no error", Eio: "Eio", Einval: "invalid argument"}

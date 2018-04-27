@@ -136,7 +136,7 @@ v := make([]int, 100)
 ```
 Remember that make applies only to maps, slices and channels and does not return a pointer. To obtain an explicit pointer allocate with new or take the address of a variable explicitly.
 
-请记住，make 只适用于映射、切片和信道且不返回指针。若要获得明确的指针， 请使用 new 分配内存。
+请记住，make 只适用于映射、切片和信道且不返回指针。若要获得明确的指针， 请使用 new 分配内存或显式地获取一个变量的地址。
 
 ### Arrays
 

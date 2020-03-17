@@ -15,7 +15,7 @@ break continue fallthrough return ++ -- ) }
 ```
 the lexer always inserts a semicolon after the token. This could be summarized as, “if the newline comes after a token that could end a statement, insert a semicolon”.
 
-则词法分析将始终在该标记后面插入分号。这点可以概括为： “如果新行前的标记为语句的末尾，则插入分号”。
+则词法分析将始终在该标记后面插入分号。这点可以概括为： “如果新行前的最后一个标记可以结束该段语句，则插入分号”。
 
 A semicolon can also be omitted immediately before a closing brace, so a statement such as
 
